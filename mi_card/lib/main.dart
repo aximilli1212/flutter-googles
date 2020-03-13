@@ -18,9 +18,19 @@ class MyApp extends StatelessWidget {
                 CircleAvatar(
                   radius: 60,
                   backgroundColor: Colors.teal,
-                  backgroundImage: NetworkImage("https://image.shutterstock.com/image-photo/beautiful-young-woman-profile-view-260nw-1209923779.jpg"),
-
+                  backgroundImage: AssetImage("images/box.png"),
                 ),
+                Text(
+                  'AkokoMarket',
+                  style: TextStyle(
+                     fontSize:30.0,
+                     color: Colors.orange,
+                    fontWeight:FontWeight.bold ,
+
+                  ),
+
+
+                )
               ],
             )
           ),
