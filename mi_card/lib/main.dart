@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.all(50.0) ,
+                  margin: EdgeInsets.all(50.0),
+                  padding: EdgeInsets.all(10.0),
                   color: Colors.grey,
                   child: Row(
                     children: <Widget>[
