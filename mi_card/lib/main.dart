@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
           ),
           body:SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
                   radius: 60,
-                  backgroundColor: Colors.teal,
                   backgroundImage: AssetImage("images/box.png"),
                 ),
                 Text(
@@ -39,25 +39,54 @@ class MyApp extends StatelessWidget {
                      fontWeight:FontWeight.normal,
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.all(50.0),
-                  padding: EdgeInsets.all(10.0),
-                  color: Colors.grey,
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
+                SizedBox(
+                  height: 20.0,
+                  width: 150.0,
+                  child: Divider(
+                    color: Colors.black,
+                    height: 120.0,
+                  ),
+                ),
+                Card(
+                  margin: EdgeInsets.symmetric(vertical:10.0,horizontal: 50.0),
+                  color: Colors.orange.shade400,
+                  child: Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: ListTile(
+                      leading: Icon(
                         Icons.phone,
+                        color: Colors.white,
                       ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        '+233 243 314 679',
+                      title: Text(
+                          '+233 243 314 679',
                           style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                            fontFamily: 'SourceSansPro',
+                          )
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  margin: EdgeInsets.symmetric(vertical:10.0,horizontal: 50.0),
+                  color: Colors.orange.shade400,
+                  child: Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.email,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'aximilli1212@gmail.com',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
                           fontFamily: 'SourceSansPro',
-                      )
-                      )
-                    ],
+                        )
+                    ),
+                    )
                   ),
                 ),
               ],
