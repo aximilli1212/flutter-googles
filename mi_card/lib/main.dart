@@ -21,15 +21,23 @@ class MyApp extends StatelessWidget {
                   backgroundImage: AssetImage("images/box.png"),
                 ),
                 Text(
-                  'AkokoMarket',
+                  'Akumia Sakie',
                   style: TextStyle(
                      fontSize:30.0,
+                     fontFamily:'Pacifico',
                      color: Colors.orange,
-                    fontWeight:FontWeight.bold ,
-
+                     fontWeight:FontWeight.bold ,
                   ),
-
-
+                ),
+                Text(
+                  'FLUTTER DEVELOPER',
+                  style: TextStyle(
+                     fontSize:20.0,
+                     letterSpacing: 2.5,
+                     fontFamily:'SourceSansPro',
+                     color: Colors.orange.shade400,
+                     fontWeight:FontWeight.normal,
+                  ),
                 )
               ],
             )
