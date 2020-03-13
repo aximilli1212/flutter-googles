@@ -12,7 +12,36 @@ class MyApp extends StatelessWidget {
             title:Text("Mi Card"),
             backgroundColor: Colors.orange,
           ),
-          body:Container(),
+          body:SafeArea(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height:100.0,
+                  width: 100.0,
+                  color: Colors.blueGrey,
+                  child: Center(
+                     child: Text("Me is first Box"),
+                  )
+                ),
+                Container(
+                  height:100.0,
+                  width: 100.0,
+                  color: Colors.redAccent,
+                  child: Center(
+                     child: Text("Me is Second Box"),
+                  )
+                ),
+                Container(
+                  height:100.0,
+                  width: 100.0,
+                  color: Colors.teal,
+                  child: Center(
+                     child: Text("Me is Third Box"),
+                  )
+                )
+              ],
+            )
+          ),
         )
     );
   }
