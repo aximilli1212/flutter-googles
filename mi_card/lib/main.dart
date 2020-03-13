@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.orange,
           ),
           body:SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Row(
+//              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Container(
@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
                   child: Center(
                      child: Text("Me is first Box"),
                   )
+                ),
+                SizedBox(
+                  width: 20.0,
                 ),
                 Container(
                   height:100.0,
