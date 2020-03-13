@@ -14,11 +14,12 @@ class MyApp extends StatelessWidget {
           ),
           body:SafeArea(
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+//              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Container(
                   height:100.0,
-                  width: 100.0,
+                  width: 300.0,
                   color: Colors.blueGrey,
                   child: Center(
                      child: Text("Me is first Box"),
