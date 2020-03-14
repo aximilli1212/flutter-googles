@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 1;
+    var rightDiceNumber = 1;
     return Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -32,7 +34,7 @@ class DicePage extends StatelessWidget {
               onPressed: (){
                 print("She Pooped");
               },
-              child: Image.asset('images/dice3.png'),
+              child: Image.asset('images/dice$leftDiceNumber.png'),
           ),
       ),
           Expanded(
@@ -40,7 +42,7 @@ class DicePage extends StatelessWidget {
             onPressed: (){
               print("he Pooped");
             },
-            child: Image.asset('images/dice1.png'),
+            child: Image.asset('images/dice$rightDiceNumber.png'),
           ),
       ),
         ],
