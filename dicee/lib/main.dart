@@ -28,16 +28,20 @@ class DicePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
-          child:Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset('images/dice3.png'),
-          )
+          child:FlatButton(
+              onPressed: (){
+                print("She Pooped");
+              },
+              child: Image.asset('images/dice3.png'),
+          ),
       ),
           Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            onPressed: (){
+              print("he Pooped");
+            },
             child: Image.asset('images/dice1.png'),
-          )
+          ),
       ),
         ],
       ),
