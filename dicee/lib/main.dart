@@ -8,7 +8,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Dicee',
-      home: DicePage(),
+      home: Scaffold(
+          backgroundColor: Colors.red,
+          appBar: AppBar(
+            title: Text("Dicee"),
+            backgroundColor: Colors.red.shade400,
+          ),
+          body: DicePage(),
+      ),
     );
   }
 }
@@ -16,11 +23,20 @@ class MyApp extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Dicee"),
-        backgroundColor: Colors.red.shade400,
-      )
+    return Row(
+      children: <Widget>[
+        Expanded(
+        child:Image(
+          image: AssetImage('images/dice1.png'),
+        ) ,
+    ),
+        Expanded(
+        child:Image(
+          image: AssetImage('images/dice1.png'),
+        ) ,
+    ),
+
+      ],
     );
   }
 }
