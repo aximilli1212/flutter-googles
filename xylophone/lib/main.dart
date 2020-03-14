@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:audioplayers/audioplayers.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
       title: 'Xylophone',
       home: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.cyan,
             title: Text('Xylophone'),
           )
 
