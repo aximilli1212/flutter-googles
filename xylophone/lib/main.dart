@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audio_cache.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,8 +11,10 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.cyan,
             title: Text('Xylophone'),
-          )
-
+          ),
+      body: SafeArea(
+          child: Center(child: Text('Clickk me up')),
+      ),
       ),
 
     );
