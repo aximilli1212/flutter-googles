@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.red,
           appBar: AppBar(
             title: Text("Dicee"),
-            backgroundColor: Colors.red.shade400,
+            backgroundColor: Colors.red,
           ),
           body: DicePage(),
       ),
@@ -24,18 +24,14 @@ class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Expanded(
-        child:Image(
-          image: AssetImage('images/dice1.png'),
-        ) ,
+        child:Image.asset('images/dice3.png')
     ),
         Expanded(
-        child:Image(
-          image: AssetImage('images/dice1.png'),
-        ) ,
+        child: Image.asset('images/dice1.png')
     ),
-
       ],
     );
   }
