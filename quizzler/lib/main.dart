@@ -12,9 +12,25 @@ class Quizzler extends StatelessWidget {
         ),
         backgroundColor: Colors.grey.shade900,
         body: SafeArea(
+          child: QuizPage(),
 
         ),
       ),
+    );
+  }
+}
+
+
+class QuizPage extends StatefulWidget {
+  @override
+  _QuizPageState createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+
     );
   }
 }
