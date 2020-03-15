@@ -37,8 +37,13 @@ class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper =  [];
   List<String> questions = [
     'You can lead a cow down stairs but not up stairs',
-    'You can lead a cow down stairs but not up stairs',
-    'You can lead a cow down stairs but not up stairs',
+    'Approximately one quarter of human bones are in the feet.',
+    'The slug\'s blood is green',
+  ];
+  List<bool> answers = [
+    true,
+    false,
+    true
   ];
 
   int questionNum = 0;
@@ -55,7 +60,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questions[questionNum],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -79,9 +84,20 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                setState((){
-                  scoreKeeper.add(correct);
-                });
+                bool correctAns  = answers[questionNum];
+
+                if(correctAns == true ){
+                  setState((){
+                    questionNum++;
+                    scoreKeeper.add(correct);
+                  });
+                }else{
+                  setState((){
+                    questionNum++;
+                    scoreKeeper.add(wrong);
+                  });
+                }
+
                 //The user picked true.
               },
             ),
@@ -100,11 +116,19 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAns  = answers[questionNum];
 
-                questionNum++;
-                setState((){
-                  scoreKeeper.add(wrong);
-                });
+                if(correctAns == false ){
+                  setState((){
+                    questionNum++;
+                    scoreKeeper.add(correct);
+                  });
+                }else{
+                  setState((){
+                    questionNum++;
+                    scoreKeeper.add(wrong);
+                  });
+                }
               },
             ),
           ),
