@@ -35,6 +35,13 @@ class _QuizPageState extends State<QuizPage> {
   );
 
   List<Icon> scoreKeeper =  [];
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs',
+    'You can lead a cow down stairs but not up stairs',
+    'You can lead a cow down stairs but not up stairs',
+  ];
+
+  int questionNum = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +100,8 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+
+                questionNum++;
                 setState((){
                   scoreKeeper.add(wrong);
                 });
