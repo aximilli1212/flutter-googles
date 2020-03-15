@@ -12,17 +12,27 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.cyan,
             title: Text('Xylophone'),
           ),
-      body: SafeArea(
-          child: Center(child:
-          RaisedButton(
-            child: Text('Click Me'),
-             onPressed: (){
-               final player = AudioCache();
-               player.play('note1.wav');
-             },
+      body: Column(
+        children: <Widget>[
+          FlatButton(
+            color: Colors.red,
+            child: Text('Sound Me'),
+            onPressed: (){
+              final player = AudioCache();
+              player.play('note1.wav');
+            },
           ),
+          FlatButton(
+            color: Colors.teal,
+            child: Text('Sound Me'),
+            onPressed: (){
+              final player = AudioCache();
+              player.play('note1.wav');
+            },
           ),
-      ),
+        ],
+      )
+
       ),
 
     );
