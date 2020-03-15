@@ -13,7 +13,15 @@ class MyApp extends StatelessWidget {
             title: Text('Xylophone'),
           ),
       body: SafeArea(
-          child: Center(child: Text('Clickk me up')),
+          child: Center(child:
+          RaisedButton(
+            child: Text('Click Me'),
+             onPressed: (){
+               final player = AudioCache();
+               player.play('note1.wav');
+             },
+          ),
+          ),
       ),
       ),
 
