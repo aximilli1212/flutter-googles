@@ -7,9 +7,6 @@ class Quizzler extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Quizzler'),
-        ),
         backgroundColor: Colors.grey.shade900,
         body: SafeArea(
           child: QuizPage(),
@@ -64,6 +61,24 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+              },
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              color: Colors.red,
+              child: Text(
+                'False',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                //The user picked false.
               },
             ),
           ),
