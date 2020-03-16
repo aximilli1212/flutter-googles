@@ -37,8 +37,21 @@ class _QuizPageState extends State<QuizPage> {
 
   QuizBrain quizBrain = QuizBrain();
 
+  void checkAnswer(bool userAnswer){
+    bool correctAns  = quizBrain.getAnswer();
 
-  int questionNum = 0;
+    if(correctAns == userAnswer ){
+      setState((){
+        quizBrain.nextQuestion();
+        scoreKeeper.add(correct);
+      });
+    }else{
+      setState((){
+        quizBrain.nextQuestion();
+        scoreKeeper.add(wrong);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,21 +89,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns  = quizBrain.getAnswer();
-
-                if(correctAns == true ){
-                  setState((){
-                    quizBrain.nextQuestion();
-                    scoreKeeper.add(correct);
-                  });
-                }else{
-                  setState((){
-                    quizBrain.nextQuestion();
-                    scoreKeeper.add(wrong);
-                  });
-                }
-
-                //The user picked true.
+                checkAnswer(true);
               },
             ),
           ),
@@ -108,19 +107,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns  = quizBrain.getAnswer();
-
-                if(correctAns == false ){
-                  setState((){
-                    quizBrain.nextQuestion();
-                    scoreKeeper.add(correct);
-                  });
-                }else{
-                  setState((){
-                    quizBrain.nextQuestion();
-                    scoreKeeper.add(wrong);
-                  });
-                }
+                checkAnswer(false);
               },
             ),
           ),
