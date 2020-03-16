@@ -37,14 +37,6 @@ class _QuizPageState extends State<QuizPage> {
 
   QuizBrain quizBrain = QuizBrain();
 
-  List<bool> answers = [
-    true,
-    false,
-    true
-  ];
-
-
-
 
   int questionNum = 0;
 
@@ -60,7 +52,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.questionBank[questionNum].questionText,
+                quizBrain.getQuestion(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -84,16 +76,16 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns  = quizBrain.questionBank[questionNum].questionAnswer;
+                bool correctAns  = quizBrain.getAnswer();
 
                 if(correctAns == true ){
                   setState((){
-                    questionNum++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(correct);
                   });
                 }else{
                   setState((){
-                    questionNum++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(wrong);
                   });
                 }
@@ -116,16 +108,16 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns  = quizBrain.questionBank[questionNum].questionAnswer;
+                bool correctAns  = quizBrain.getAnswer();
 
                 if(correctAns == false ){
                   setState((){
-                    questionNum++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(correct);
                   });
                 }else{
                   setState((){
-                    questionNum++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(wrong);
                   });
                 }
