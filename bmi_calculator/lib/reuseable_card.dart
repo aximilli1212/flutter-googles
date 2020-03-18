@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ReuseableCard extends StatelessWidget {
-  Color colour = Color(0XFF1D1E33);
+  final Color colour;
 
   ReuseableCard({@required this.colour});
 
