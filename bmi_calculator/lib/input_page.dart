@@ -20,10 +20,12 @@ class _InputPageState extends State<InputPage> {
             child: Row(
                 children: <Widget>[
                     Expanded(
-                    child: ReuseableCard(),
+                    child: ReuseableCard(colour: Color(0XFF1D1E33)),
                   ),
                   Expanded(
-                    child: ReuseableCard(),
+                    child: ReuseableCard(
+                      colour: Color(0XFF1D1E33),
+                    ),
                   ),
 
             ]
@@ -31,16 +33,22 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
             Expanded(
-              child: ReuseableCard(),
+              child: ReuseableCard(
+                colour: Color(0XFF1D1E33),
+              ),
             ),
             Expanded(
               child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: ReuseableCard(),
+                      child: ReuseableCard(
+                        colour: Color(0XFF1D1E33),
+                      ),
                     ),
                     Expanded(
-                      child: ReuseableCard(),
+                      child: ReuseableCard(
+                        colour: Color(0XFF1D1E33),
+                      ),
                     ),
 
                   ]
