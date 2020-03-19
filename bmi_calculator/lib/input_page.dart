@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'reuseable_card.dart';
 
+const CONHEIGHT = 80.0;
 
 class InputPage extends StatefulWidget {
   @override
@@ -55,6 +56,11 @@ class _InputPageState extends State<InputPage> {
 
               ),
             ),
+            Container(
+              color: Color(0xFFEB1555),
+              width: double.infinity,
+              height: CONHEIGHT,
+            )
         ],
       )
     );
