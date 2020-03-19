@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'reuseable_card.dart';
 
 
 class InputPage extends StatefulWidget {
@@ -52,19 +53,3 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class ReuseableCard extends StatelessWidget {
-  const ReuseableCard({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0) ,
-      decoration: BoxDecoration(
-        color: Color(0XFF1D1E33),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    );
-  }
-}
