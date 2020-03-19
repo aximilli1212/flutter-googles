@@ -27,15 +27,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReuseableCard(
                       colour: ActiveCardColor,
-                        cardChild:Column(
-                          children: <Widget>[
-                            Icon(
-                              Icons.access_alarms,
-                              size: 80.0,
-                            ),
-                            Text('Make me rain'),
-                          ],
-                        )
+                        cardChild:IconContent(Icons.)
 
                     ),
                   ),
@@ -77,4 +69,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
