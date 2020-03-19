@@ -26,17 +26,6 @@ class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
 
-//  void updateCardColor(){
-//       if(maleCardColor == activeCardColor ){
-//         maleCardColor = inactiveCardColor;
-//         femaleCardColor = activeCardColor;
-//       }
-//       else if(femaleCardColor == activeCardColor){
-//         maleCardColor = activeCardColor;
-//         femaleCardColor = inactiveCardColor;
-//       }
-//  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,35 +38,31 @@ class _InputPageState extends State<InputPage> {
             child: Row(
                 children: <Widget>[
                     Expanded(
-                    child:GestureDetector(
-                      onTap:(){
-                        setState((){
-                         selectedGender = Gender.male;
-                        });
+                    child:ReuseableCard(
+                      onPress:(){
+                          setState((){
+                            selectedGender = Gender.male;
+                          });
                       },
-                      child: ReuseableCard(
-                        colour: selectedGender == Gender.male ? activeCardColor: inactiveCardColor,
-                        cardChild:IconContent(
-                            icon: Icons.battery_alert,
-                            label:'male'
-                        ),
+                      colour: selectedGender == Gender.male ? activeCardColor: inactiveCardColor,
+                      cardChild:IconContent(
+                          icon: Icons.battery_alert,
+                          label:'male'
                       ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap:(){
+                    child: ReuseableCard(
+                      onPress:(){
                         setState((){
                           selectedGender = Gender.female;
                         });
                       },
-                      child: ReuseableCard(
-                        colour: selectedGender == Gender.female ? activeCardColor: inactiveCardColor,
-                          cardChild:IconContent(
-                              icon: Icons.add_shopping_cart,
-                              label:'Female'
-                          ),
-                      ),
+                      colour: selectedGender == Gender.female ? activeCardColor: inactiveCardColor,
+                        cardChild:IconContent(
+                            icon: Icons.add_shopping_cart,
+                            label:'Female'
+                        ),
                     ),
                   ),
             ]
