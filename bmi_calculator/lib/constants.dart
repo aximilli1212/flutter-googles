@@ -8,4 +8,8 @@ const kLabelTextStyle = TextStyle(
   fontSize: 20.0,
   color: Color(0xFF8D8E98),
 );
+const kHeavyTextStyle= TextStyle(
+  fontSize: 80.0,
+  fontWeight: FontWeight.w900,
+);
 
