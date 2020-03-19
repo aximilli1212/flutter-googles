@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'reuseable_card.dart';
+import 'icon_content.dart';
 
 const CONHEIGHT = 80.0;
 const ActiveCardColor = Color(0XFF1D1E33);
@@ -22,21 +23,21 @@ class _InputPageState extends State<InputPage> {
             child: Row(
                 children: <Widget>[
                     Expanded(
-                    child: ReuseableCard(colour: Color(0XFF1D1E33)),
+                    child:ReuseableCard(
+                      colour: ActiveCardColor,
+                      cardChild:IconContent(
+                          icon: Icons.battery_alert,
+                          label:'male'
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: ReuseableCard(
                       colour: ActiveCardColor,
-                        cardChild:Column(
-                          children: <Widget>[
-                            Icon(
-                              Icons.access_alarms,
-                              size: 80.0,
-                            ),
-                            Text('Make me rain'),
-                          ],
-                        )
-
+                        cardChild:IconContent(
+                            icon: Icons.add_shopping_cart,
+                            label:'Female'
+                        ),
                     ),
                   ),
             ]
@@ -77,4 +78,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
