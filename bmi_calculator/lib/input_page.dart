@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'reuseable_card.dart';
 import 'icon_content.dart';
+import 'constants.dart';
 
 
-//Constants Declared
-const CONHEIGHT = 80.0;
-const activeCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF111328);
-const bottomCardColor = Color(0xFFEB1555);
 enum Gender {
   male,
   female
 }
 
 //Widgets Declared
-Color  maleCardColor = activeCardColor;
-Color  femaleCardColor = activeCardColor;
+Color  maleCardColor = kActiveCardColor;
+Color  femaleCardColor = kActiveCardColor;
 
 class InputPage extends StatefulWidget {
   @override
@@ -44,7 +40,7 @@ class _InputPageState extends State<InputPage> {
                             selectedGender = Gender.male;
                           });
                       },
-                      colour: selectedGender == Gender.male ? activeCardColor: inactiveCardColor,
+                      colour: selectedGender == Gender.male ? kActiveCardColor: kInactiveCardColor,
                       cardChild:IconContent(
                           icon: Icons.battery_alert,
                           label:'male'
@@ -58,7 +54,7 @@ class _InputPageState extends State<InputPage> {
                           selectedGender = Gender.female;
                         });
                       },
-                      colour: selectedGender == Gender.female ? activeCardColor: inactiveCardColor,
+                      colour: selectedGender == Gender.female ? kActiveCardColor: kInactiveCardColor,
                         cardChild:IconContent(
                             icon: Icons.add_shopping_cart,
                             label:'Female'
@@ -94,9 +90,9 @@ class _InputPageState extends State<InputPage> {
             ),
             Container(
               margin: EdgeInsets.only(top:10.0),
-              color: bottomCardColor,
+              color: kBottomCardColor,
               width: double.infinity,
-              height: CONHEIGHT,
+              height: kConHeight,
             )
         ],
       )
