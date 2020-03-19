@@ -5,7 +5,7 @@ class IconContent extends StatelessWidget {
   final IconData icon;
   final String label;
 
-  IconContent(this.icon,this.label);
+  IconContent({this.icon,this.label});
 
   @override
   Widget build(BuildContext context) {
