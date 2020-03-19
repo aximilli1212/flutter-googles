@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'reuseable_card.dart';
 
 const CONHEIGHT = 80.0;
+const ActiveCardColor = Color(0XFF1D1E33);
 
 class InputPage extends StatefulWidget {
   @override
@@ -25,10 +26,19 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReuseableCard(
-                      colour: Color(0XFF1D1E33),
+                      colour: ActiveCardColor,
+                        cardChild:Column(
+                          children: <Widget>[
+                            Icon(
+                              Icons.access_alarms,
+                              size: 80.0,
+                            ),
+                            Text('Make me rain'),
+                          ],
+                        )
+
                     ),
                   ),
-
             ]
 
             ),
@@ -57,6 +67,7 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(top:10.0),
               color: Color(0xFFEB1555),
               width: double.infinity,
               height: CONHEIGHT,
