@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'screen1.dart';
-import 'screen2.dart';
 
 
 class Screen0 extends StatelessWidget {
@@ -19,11 +18,7 @@ class Screen0 extends StatelessWidget {
             child: RaisedButton(
               color: Colors.purple,
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                   return Screen1();
-                }
-                ),
-                );
+                Navigator.pushNamed(context,'/first');
               },
               child: Text('Goto Screen 1', style: TextStyle(
                 color: Colors.white,
@@ -33,7 +28,9 @@ class Screen0 extends StatelessWidget {
           Center(
             child: RaisedButton(
               color: Colors.lightBlueAccent,
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context,'/second');
+              },
               child: Text('Goto Screen 2', style: TextStyle(
                 color: Colors.white,
               ),),

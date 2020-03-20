@@ -16,7 +16,10 @@ class Screen2 extends StatelessWidget {
           Center(
             child: RaisedButton(
               color: Colors.deepOrange,
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context,'/');
+
+              },
               child: Text('Goto Screen 0', style: TextStyle(
                 color: Colors.white,
               ),),
