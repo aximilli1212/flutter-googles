@@ -7,17 +7,17 @@ class Screen0 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white10,
       appBar: AppBar(
-        title: Text('Screen0'),
-        backgroundColor: Colors.blueGrey,
+        title: Text('Screen2'),
+        backgroundColor: Colors.red,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
             child: RaisedButton(
-              color: Colors.purple,
+              color: Colors.deepOrange,
               onPressed: (){},
-              child: Text('Goto Screen 1', style: TextStyle(
+              child: Text('Goto Screen 0', style: TextStyle(
                 color: Colors.white,
               ),),
             ),
