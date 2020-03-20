@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reuseable_card.dart';
 import 'icon_content.dart';
 import 'constants.dart';
@@ -24,6 +25,7 @@ class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
   int height = 170;
+  int weight = 70;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class _InputPageState extends State<InputPage> {
                       },
                       colour: selectedGender == Gender.male ? kActiveCardColor: kInactiveCardColor,
                       cardChild:IconContent(
-                          icon: Icons.battery_alert,
+                          icon: FontAwesomeIcons.mars,
                           label:'male'
                       ),
                     ),
@@ -60,7 +62,7 @@ class _InputPageState extends State<InputPage> {
                       },
                       colour: selectedGender == Gender.female ? kActiveCardColor: kInactiveCardColor,
                         cardChild:IconContent(
-                            icon: Icons.add_shopping_cart,
+                            icon: FontAwesomeIcons.venus,
                             label:'Female'
                         ),
                     ),
@@ -124,6 +126,42 @@ class _InputPageState extends State<InputPage> {
                     Expanded(
                       child: ReuseableCard(
                         colour: Color(0xFF1D1E33),
+                        cardChild: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'HEIGHT',
+                              style: kLabelTextStyle,
+                            ),
+                            Text(
+                              weight.toString(),
+                              style: kHeavyTextStyle,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                FloatingActionButton(
+                                  backgroundColor: Color(0xFF4C4F5E),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                FloatingActionButton(
+                                  backgroundColor: Color(0xFF4C4F5E),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            )
+
+                          ],
+                        ),
                       ),
                     ),
                     Expanded(
@@ -147,3 +185,25 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
+class RoundIconButton extends StatelessWidget {
+
+  RoundIconButton({this.icon});
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+       child: Icon(icon),
+      onPressed: (){},
+      elevation: 6.0,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0
+      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      fillColor: Color(0xFF4C4F5E),
+    );
+  }
+}
+
