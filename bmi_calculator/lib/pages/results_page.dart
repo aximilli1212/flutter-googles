@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'reuseable_card.dart';
+import 'package:bmi_calculator/helpers/constants.dart';
+import 'package:bmi_calculator/components/reuseable_card.dart';
 class ResultsPage extends StatelessWidget {
 
   double bmi = 18.0;
