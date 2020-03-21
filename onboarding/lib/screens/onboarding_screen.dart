@@ -15,6 +15,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final int numPages = 3;
+  final PageController _pageController = PageController(initialPage: 0);
+  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
