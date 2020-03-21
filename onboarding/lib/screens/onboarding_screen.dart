@@ -17,7 +17,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final int numPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
-  int currentPage = 0;
+  int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,50 @@ class _MainScreenState extends State<MainScreen> {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    Container(
+                      height: 600.0,
+                      child: PageView(
+                        physics: ClampingScrollPhysics(),
+                        controller: _pageController,
+                        onPageChanged: (int page){
+                          setState((){
+                            _currentPage = page;
+                          });
+                        },
+                        children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Center(
+                                  child: Image(
+                                    image: AssetImage('images/completed.png'),
+                                    height: 500.0,
+                                    width: 500.0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 30.0,
+                                ),
+                              Text(
+                                "Connect People\n Around the world.",
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                                SizedBox(
+                                  height: 30.0,
+                                ),
+                                Text(
+                                  "Lorem ipsum all the strings you can marshall for main usage."
+                                )
+                              ],
+                            )
+                         ],
+                      ),
+                    ),
                   ],
                 ),
               ),
