@@ -1,14 +1,12 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 
-class OnboardingPage extends StatefulWidget {
-  OnboardingPage({Key key}) : super(key: key);
-
-  _OnboardingPageState createState() => _OnboardingPageState();
+class OnboardOne extends StatefulWidget {
+  @override
+  _OnboardOneState createState() => _OnboardOneState();
 }
 
-class _OnboardingPageState extends State<OnboardingPage> {
+class _OnboardOneState extends State<OnboardOne> {
   final int _totalPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
@@ -40,17 +38,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
             },
             children: <Widget>[
               _buildPageContent(
-                  image: 'assets/images/onboarding1.png',
+                  image: 'images/onboarding1.png',
                   title: 'In hac habitasse platea dictumst.',
                   body:
                   'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque.'),
               _buildPageContent(
-                  image: 'assets/images/onboarding2.png',
+                  image: 'images/onboarding2.png',
                   title: 'In hac habitasse platea dictumst.',
                   body:
                   'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque.'),
               _buildPageContent(
-                  image: 'assets/images/onboarding3.png',
+                  image: 'images/onboarding3.png',
                   title: 'In hac habitasse platea dictumst.',
                   body:
                   'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque.')
