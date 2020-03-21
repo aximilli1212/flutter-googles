@@ -222,7 +222,11 @@ class _InputPageState extends State<InputPage> {
                Navigator.pushNamed(context, '/results');
               },
               child: Container(
-                child: Text('CALCULATE'),
+                padding: EdgeInsets.only(bottom:10.0),
+                child: Center(child: Text('CALCULATE', style:TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.0,
+                ),)),
                 margin: EdgeInsets.only(top:10.0),
                 color: kBottomCardColor,
                 width: double.infinity,
