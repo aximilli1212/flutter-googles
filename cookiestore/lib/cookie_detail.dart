@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'single_cookie.dart';
+import 'bottombar.dart';
 
 class CookieDetail extends StatelessWidget {
   Color textColor = Color(0xFF545D68);
