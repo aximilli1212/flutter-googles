@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pickup.dart';
+import 'bottombar.dart';
 
 void main() => runApp(MyApp());
 
@@ -60,6 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
         body:PickupBody(),
+      floatingActionButton: FloatingActionButton(onPressed: (){},
+      backgroundColor: Color(0xFFF17532),
+      child: Icon(Icons.fastfood),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomBar() ,
     );
 
        // This trailing comma makes auto-formatting nicer for build methods.
