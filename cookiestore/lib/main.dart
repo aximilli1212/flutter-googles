@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pickup.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,15 +26,8 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-with SingleTickerProviderStateMixin{
-  TabController _tabController;
+class _MyHomePageState extends State<MyHomePage> {
 
-//  @overide
-  void initState(){
-    super.initState();
-    _tabController = TabController(length: 3, vsync: this);
-  }
 
   Color textColor = Color(0xFF545D68);
 
@@ -71,11 +65,3 @@ with SingleTickerProviderStateMixin{
        // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
-
-class PickupBody extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView();
-  }
-}
-
