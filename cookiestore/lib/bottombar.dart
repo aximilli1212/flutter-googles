@@ -31,8 +31,8 @@ class BottomBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                      Icon(Icons.home, color: textOrange,size: 35.0),
-                      Icon(Icons.person_outline, color: textGrey,size: 35.0),
+                      Icon(Icons.home, color: textOrange,size: 30.0),
+                      Icon(Icons.person_outline, color: textGrey,size: 30.0),
                     ],
                 ),
               ),
@@ -42,13 +42,13 @@ class BottomBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Icon(Icons.search, color: textOrange,size: 35.0),
-                      Icon(Icons.shopping_basket, color: textGrey,size: 35.0),
+                      Icon(Icons.search, color: textOrange,size: 30.0),
+                      Icon(Icons.shopping_basket, color: textGrey,size: 30.0),
                     ],
                 ),
               ),
             ],
-          )
+          ),
       ),
     );
   }
