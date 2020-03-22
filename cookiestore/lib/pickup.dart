@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cookie_page.dart';
 
 class PickupBody extends StatefulWidget
 {
@@ -62,7 +63,19 @@ class _PickupBodyState extends State<PickupBody>
                   ),
                 ),
             ],
-          )
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height -20,
+            width: double.infinity,
+            child: TabBarView(
+              controller: _tabController,
+              children: <Widget>[
+                CookiePage(),
+                CookiePage(),
+                CookiePage(),
+              ],
+            ),
+          ),
 
         ],
       ),

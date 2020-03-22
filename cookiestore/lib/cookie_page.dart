@@ -11,7 +11,7 @@ class CookiePage  extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(right: 15.0),
             width: MediaQuery.of(context).size.width - 30.0,
-            height: MediaQuery.of(context).size.width - 50.0,
+            height: MediaQuery.of(context).size.height - 50.0,
             child: GridView.count(
               crossAxisCount: 2,
               primary: false,
@@ -47,6 +47,47 @@ class CookiePage  extends StatelessWidget {
                ),
              ],
              color: Colors.white,
+           ),
+           child: Column(
+             children: <Widget>[
+               Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.end,
+                   children: <Widget>[
+                     isFavorite? Icon(Icons.favorite, color: Color(0xFFEF7532)):
+                         Icon(Icons.favorite_border, color:Color(0xFFEF7532))
+                   ],
+                 ),
+               ),
+               Hero(
+                 tag: imgPath,
+                 child: Container(
+                   height: 115.0,
+                   width: 115.0,
+                   decoration: BoxDecoration(
+                     image: DecorationImage(image: AssetImage(imgPath),
+                     fit: BoxFit.contain,
+                     ),
+                   ),
+                 ),
+       ),
+               SizedBox(height: 10.0,),
+               Text(price,
+               style: TextStyle(
+                 color: Color(0xFFCC8053),
+                 fontFamily: 'Varela',
+                 fontSize: 20.0,
+               fontStyle: FontStyle.italic),
+               ),
+               SizedBox(height: 5.0),
+               Text(name,
+               style: TextStyle(
+                 color: Color(0xFF575E67),
+                 fontFamily: 'Varela',
+                 fontSize: 18.0
+               ),)
+             ],
            ),
          ),
        ),
