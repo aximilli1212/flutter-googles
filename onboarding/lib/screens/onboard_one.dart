@@ -93,7 +93,10 @@ class _OnboardOneState extends State<OnboardOne> {
         ),
       )
           : InkWell(
-        onTap: () => print('Get Started Now'),
+        onTap: (){
+            _pageController.animateToPage(1, duration: Duration(milliseconds: 400), curve: Curves.linear);
+            setState(() {});
+        },
         child: Container(
           height: Platform.isIOS ? 70 : 60,
           color: Colors.blue,
