@@ -9,7 +9,7 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: CircularNotchedRectangle(),
-      notchMargin: 6.0,
+      notchMargin: 8.0,
       elevation: 9.0,
       color: Colors.transparent,
       clipBehavior: Clip.antiAlias,
@@ -31,9 +31,8 @@ class BottomBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                      Icon(Icons.home, color: textOrange),
-                      Icon(Icons.person_outline, color: textGrey,
-                      ),
+                      Icon(Icons.home, color: textOrange,size: 30.0),
+                      Icon(Icons.person_outline, color: textGrey,size: 30.0),
                     ],
                 ),
               ),
@@ -43,14 +42,13 @@ class BottomBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Icon(Icons.home, color: textOrange),
-                      Icon(Icons.person_outline, color: textGrey,
-                      ),
+                      Icon(Icons.search, color: textOrange,size: 30.0),
+                      Icon(Icons.shopping_basket, color: textGrey,size: 30.0),
                     ],
                 ),
               ),
             ],
-          )
+          ),
       ),
     );
   }
