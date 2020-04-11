@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clima/services/location.dart';
+import 'package:http/http.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -16,8 +17,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
       print("************");
       print(location.latitude);
 
+  }
 
+  void getData() async{
+    Response response = await get(
 
+    );
+    print(response);
   }
 
   @override
@@ -31,12 +37,23 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-         child: RaisedButton(
-           color: Colors.orange,
-           child: Text('Get Location'),
-           onPressed: (){
-             getLocation();
-           },
+         child: Column(
+           children: <Widget>[
+             RaisedButton(
+               color: Colors.orange,
+               child: Text('Get Location'),
+               onPressed: (){
+                 getLocation();
+               },
+             ),
+             RaisedButton(
+               color: Colors.orange,
+               child: Text('Get Weather'),
+               onPressed: (){
+                 getData();
+               },
+             ),
+           ],
          ),
       ),
     );
