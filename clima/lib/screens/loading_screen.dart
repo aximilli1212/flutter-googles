@@ -10,24 +10,33 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
 
+   String apiKey = "b46361d8210782dad0019e0be67ac48f";
+
+   double latitude;
+   double longitude;
+
   void getLocation() async{
       Location location = Location();
 
       await location.getCurrentLocation();
-      print(location.longitude);
-      print("************");
-      print(location.latitude);
+
+      latitude = location.latitude;
+      longitude = location.longitude;
+
+      getData();
 
   }
 
   void getData() async{
     http.Response response = await http.get(
-   'https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b1b15e88fa797225412429c1c50c122a1');
+   'https://samples.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
     response.statusCode == 200? print(response.body): print(response.statusCode);
     if(response.statusCode == 200){
         String data = response.body;
         var newObj =  jsonDecode(data);
-        print(newObj['message']);
+        print(newObj['coord']['lon']);
+        print(newObj['coord']['lat']);
+        print(newObj['weather'][0]['description']);
 
     }else{
       print(response.statusCode);
