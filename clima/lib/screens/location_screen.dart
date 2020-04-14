@@ -20,6 +20,7 @@ class _LocationScreenState extends State<LocationScreen> {
   int condition;
   String cityName;
   String weatherIcon;
+  String weatherMessage;
 
   WeatherModel weather = WeatherModel();
 
@@ -32,19 +33,22 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void updateUI(dynamic weatherData){
+    setState((){
     print(weatherData);
     print('we updateing UI');
     double temp = weatherData['main']['temp'];
     temperature = temp.toInt();
-
     condition = weatherData['weather'][0]['id'];
-    weatherIcon = weather.getWeatherIcon(condition);
     cityName = weatherData['name'];
+
+    weatherMessage = weather.getMessage(temperature);
+    weatherIcon = weather.getWeatherIcon(condition);
 
     print(weatherData['coord']['lon']);
     print(weatherData['coord']['lat']);
     print(weatherData['weather'][0]['description']);
 
+    });
   }
 
   @override
@@ -102,7 +106,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Padding(
                 padding: EdgeInsets.only(right: 15.0),
                 child: Text(
-                  "It's 🍦 time in San Francisco!",
+                  "$weatherMessage in $cityName!",
                   textAlign: TextAlign.right,
                   style: kMessageTextStyle,
                 ),
