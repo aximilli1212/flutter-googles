@@ -6,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
 class LoadingScreen extends StatefulWidget {
+
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
@@ -22,11 +23,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
       Location location = Location();
 
       await location.getCurrentLocation();
-
-      latitude = location.latitude;
-      longitude = location.longitude;
       
-      NetworkHelper networkHelper = NetworkHelper('https://samples.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
+      NetworkHelper networkHelper = NetworkHelper('https://samples.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey');
 
       var newObj = await networkHelper.getData();
 
@@ -35,7 +33,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       print(newObj['weather'][0]['description']);
 
       Navigator.push(context, MaterialPageRoute(builder: (context){
-        return LocationScreen();
+        return LocationScreen(locationWeather: newObj,);
       }));
 
   }
