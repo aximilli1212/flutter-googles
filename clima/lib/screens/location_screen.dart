@@ -17,7 +17,11 @@ class _LocationScreenState extends State<LocationScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print(widget.locationWeather);
+   var newObj = widget.locationWeather;
+   print("straight from compton");
+    print(newObj['coord']['lon']);
+    print(newObj['coord']['lat']);
+    print(newObj['weather'][0]['description']);
   }
 
   @override
