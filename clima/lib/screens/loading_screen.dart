@@ -16,6 +16,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
    double longitude;
 
   void getLocation() async{
+    print("we getting location:");
       Location location = Location();
 
       await location.getCurrentLocation();
@@ -52,13 +53,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
                child: Text('Get Location'),
                onPressed: (){
                  getLocation();
-               },
-             ),
-             RaisedButton(
-               color: Colors.orange,
-               child: Text('Get Weather'),
-               onPressed: (){
-                 getData();
                },
              ),
            ],

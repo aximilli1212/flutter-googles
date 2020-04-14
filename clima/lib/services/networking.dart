@@ -9,7 +9,6 @@ class NetworkHelper {
 
   Future getData() async{
     http.Response response = await http.get(url);
-    response.statusCode == 200? print(response.body): print(response.statusCode);
     if(response.statusCode == 200){
       String data = response.body;
       return jsonDecode(data);
