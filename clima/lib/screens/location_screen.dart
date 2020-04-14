@@ -80,7 +80,9 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var weatherData = await weather.getLocationWeather();
+                    },
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,
