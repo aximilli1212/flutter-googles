@@ -28,7 +28,7 @@ class _CityScreenState extends State<CityScreen> {
                 alignment: Alignment.topLeft,
                 child: FlatButton(
                   onPressed: () {
-                    Navigator.pop(context, cityName);
+                    Navigator.pop(context);
                   },
                   child: Icon(
                     Icons.arrow_back_ios,
@@ -41,6 +41,7 @@ class _CityScreenState extends State<CityScreen> {
                 child: TextField(
                   onChanged: (value){
                     cityName = value;
+                    print(value);
                   },
                   style: TextStyle(
                     color: Colors.black,
@@ -49,7 +50,9 @@ class _CityScreenState extends State<CityScreen> {
                 ),
               ),
               FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context, cityName);
+                },
                 child: Text(
                   'Get Weather',
                   style: kButtonTextStyle,
