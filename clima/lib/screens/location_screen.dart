@@ -13,15 +13,25 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
 
+  double temperature;
+  int condition;
+  String cityName;
+
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
    var newObj = widget.locationWeather;
-   print("straight from compton");
-    print(newObj['coord']['lon']);
-    print(newObj['coord']['lat']);
-    print(newObj['weather'][0]['description']);
+ updateUI(newObj);
+  }
+
+  void updateUI(dynamic weatherData){
+    temperature = weatherData['main']['temp'];
+    condition = weatherData['weather'][0]['id'];
+    cityName = weatherData['name'];
+
+
   }
 
   @override
