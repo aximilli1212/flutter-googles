@@ -17,7 +17,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
 
     controller = AnimationController(
       duration: Duration(seconds:1),
-      vsync: this
+      vsync: this,
+      upperBound: 100.0
     );
 
     controller.forward();
@@ -26,13 +27,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
       setState(() {});
       print(controller.value);
     });
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white.withOpacity(1),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -45,7 +45,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   tag: 'hero',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: 60.0,
+                    height: controller.value,
                   ),
                 ),
                 Text(
