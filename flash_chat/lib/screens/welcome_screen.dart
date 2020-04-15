@@ -19,16 +19,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
     controller = AnimationController(
       duration: Duration(seconds:1),
       vsync: this,
-      upperBound: 100.0
     );
 
-    animation = CurvedAnimation(parent: controller, curve: Curves.easeInBack);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
     controller.forward();
 
+    //Loop animation at each point in lifecycle
+    animation.addStatusListener((status){
+      if(status == AnimationStatus.completed){
+        controller.reverse(from: 1.0);
+      }else if(status == AnimationStatus.dismissed){
+        controller.forward();
+      }
+    });
+
     controller.addListener((){
       setState(() {});
-      print(controller.value);
     });
   }
 
@@ -48,7 +55,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   tag: 'hero',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: controller.value,
+                    height: animation.value * 100,
                   ),
                 ),
                 Text(
@@ -106,5 +113,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.dispose();
+    super.dispose();
   }
 }
