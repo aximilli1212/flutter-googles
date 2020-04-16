@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flash_chat/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String route = 'welcome_screen';
@@ -50,62 +52,34 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                     height: 60.0,
                   ),
                 ),
-                Text(
-                  'Flash Chat',
-                  style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
+
+              TypewriterAnimatedTextKit(
+                speed: Duration(milliseconds: 1000),
+                text: ["Flash Chat"],
+                textStyle: TextStyle(fontSize: 45.0, fontWeight: FontWeight.w900),
+              ),
               ],
             ),
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context,'login_screen');
-                    //Go to login screen.
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ),
+            FlashRoundedButton(
+                bText:"Login",
+                bColor: Colors.orange,
+                onTap:(){Navigator.pushNamed(context,'login_screen');}
                 ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Go to registration screen.
-                    Navigator.pushNamed(context,'registration_screen');
-
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                  ),
-                ),
-              ),
+            FlashRoundedButton(
+                bText:"Register",
+                bColor: Colors.blueAccent,
+                onTap:(){Navigator.pushNamed(context,'registration_screen');}
             ),
           ],
         ),
       ),
     );
   }
+
+
 
   @override
   void dispose() {
