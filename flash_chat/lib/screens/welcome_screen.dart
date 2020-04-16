@@ -21,28 +21,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
       vsync: this,
     );
 
-    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    animation = ColorTween(begin: Colors.blue, end: Colors.white).animate(controller);
 
     controller.forward();
 
-    //Loop animation at each point in lifecycle
-    animation.addStatusListener((status){
-      if(status == AnimationStatus.completed){
-        controller.reverse(from: 1.0);
-      }else if(status == AnimationStatus.dismissed){
-        controller.forward();
-      }
-    });
-
     controller.addListener((){
       setState(() {});
+      print(animation.value);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(1),
+      backgroundColor:  animation.value,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -55,7 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   tag: 'hero',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: animation.value * 100,
+                    height: 60.0,
                   ),
                 ),
                 Text(
