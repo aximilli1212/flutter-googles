@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FlashRoundedButton extends StatelessWidget {
-  FlashRoundedButton({this.bText,this.bColor,this.onTap});
+  FlashRoundedButton({this.bText,this.bColor,@required this.onTap});
 
   final String bText;
   final Color bColor;
@@ -25,6 +25,9 @@ class FlashRoundedButton extends StatelessWidget {
           height: 42.0,
           child: Text(
             bText,
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
         ),
       ),
