@@ -14,6 +14,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   String email;
   String password;
 
+  final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +40,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
               onChanged: (value) {
+                  email = value;
                 //Do something with the user input.
               },
                 decoration: kInputDecor.copyWith(
@@ -64,7 +67,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             FlashRoundedButton(
                 bText:"Register",
                 bColor: Colors.blueAccent,
-                onTap:(){Navigator.pushNamed(context,'login_screen');}
+                onTap:() async{
+                  print(email);
+                  print(password);
+
+                  try{
+                    final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+
+                    if(newUser != null){
+                        print(newUser);
+                    }else{
+                      print('Umm could not register');
+                    }
+
+                  }catch(err){
+                    print(err);
+                  }
+
+
+                }
             ),
           ],
         ),
