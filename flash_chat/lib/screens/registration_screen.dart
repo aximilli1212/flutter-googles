@@ -68,14 +68,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 bText:"Register",
                 bColor: Colors.blueAccent,
                 onTap:() async{
-                  print(email);
-                  print(password);
-
                   try{
                     final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
                     if(newUser != null){
                         print(newUser);
+                        Navigator.pushNamed(context, 'chat_screen');
                     }else{
                       print('Umm could not register');
                     }
