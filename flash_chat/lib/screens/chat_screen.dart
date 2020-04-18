@@ -18,6 +18,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    getCurrentUser();
   }
 
   void getCurrentUser() async{
