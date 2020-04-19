@@ -12,6 +12,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  bool _saving = false;
+
+
   String email;
   String password;
 
@@ -21,72 +24,87 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Hero(
-              tag: 'hero',
-              child: Container(
-                height: 200.0,
-                child: Image.asset('images/logo.png'),
+      body: ModalProgressHUD(
+        inAsyncCall: _saving,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Hero(
+                tag: 'hero',
+                child: Container(
+                  height: 200.0,
+                  child: Image.asset('images/logo.png'),
+                ),
               ),
-            ),
-            SizedBox(
-              height: 48.0,
-            ),
-            TextField(
-                keyboardType: TextInputType.emailAddress,
-                textAlign: TextAlign.center,
-              onChanged: (value) {
-                  email = value;
-                //Do something with the user input.
-              },
+              SizedBox(
+                height: 48.0,
+              ),
+              TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.center,
+                onChanged: (value) {
+                    email = value;
+                  //Do something with the user input.
+                },
+                  decoration: kInputDecor.copyWith(
+                    hintText: "Enter Your Email",
+                  )
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              TextField(
+                obscureText: true,
+                  textAlign: TextAlign.center,
+                onChanged: (value) {
+                    password = value;
+                  //Do something with the user input.
+                },
                 decoration: kInputDecor.copyWith(
-                  hintText: "Enter Your Email",
+                  hintText: "Enter Password",
                 )
-            ),
-            SizedBox(
-              height: 8.0,
-            ),
-            TextField(
-              obscureText: true,
-                textAlign: TextAlign.center,
-              onChanged: (value) {
-                  password = value;
-                //Do something with the user input.
-              },
-              decoration: kInputDecor.copyWith(
-                hintText: "Enter Password",
-              )
-            ),
-            SizedBox(
-              height: 24.0,
-            ),
-            FlashRoundedButton(
-                bText:"Register",
-                bColor: Colors.blueAccent,
-                onTap:() async{
-                  try{
-                    final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+              ),
+              SizedBox(
+                height: 24.0,
+              ),
+              FlashRoundedButton(
+                  bText:"Register",
+                  bColor: Colors.blueAccent,
+                  onTap:() async{
+                    setState((){
+                      _saving = true;
+                    });
+                    try{
+                      final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
-                    if(newUser != null){
-                        print(newUser);
-                        Navigator.pushNamed(context, 'chat_screen');
-                    }else{
-                      print('Umm could not register');
+                      if(newUser != null){
+                          setState((){
+                            _saving = false;
+                          });
+                          Navigator.pushNamed(context, 'chat_screen');
+                      }else{
+                        print('Umm could not register');
+                        setState((){
+                          _saving = false;
+                        });
+
+                      }
+
+                    }catch(err){
+                      print(err);
+                      setState((){
+                        _saving = false;
+                      });
                     }
 
-                  }catch(err){
-                    print(err);
+
                   }
-
-
-                }
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

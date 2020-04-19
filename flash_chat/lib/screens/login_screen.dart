@@ -93,10 +93,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, 'chat_screen');
                       }else{
                         print('Umm could not log you in.');
+                        setState(() {
+                          _saving = false;
+                        });
                       }
 
                     }catch(err){
                       print(err);
+                      setState(() {
+                        _saving = false;
+                      });
                     }
 
                   }
