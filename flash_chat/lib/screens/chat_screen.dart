@@ -39,6 +39,15 @@ class _ChatScreenState extends State<ChatScreen> {
     }
 }
 
+void messagesStream()async{
+    await for(var snapshot in _db.collection('messages').snapshots()){
+      for(var message in snapshot.documents){
+        print(message.data);
+      }
+
+    }
+}
+
 void getMessages()async{
     final messages = await _db.collection('messages').getDocuments();
     for (var message in messages.documents){
@@ -58,6 +67,11 @@ void getMessages()async{
                 _auth.signOut();
                 Navigator.pop(context);
                 //Implement logout functionality
+              }),
+          IconButton(
+              icon: Icon(Icons.shop),
+              onPressed: () {
+                getMessages();
               }),
         ],
         title: Text('⚡️Chat'),
