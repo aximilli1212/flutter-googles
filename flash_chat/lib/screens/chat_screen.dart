@@ -23,7 +23,6 @@ class _ChatScreenState extends State<ChatScreen> {
     // TODO: implement initState
     super.initState();
     getCurrentUser();
-    getMessages();
   }
 
   void getCurrentUser() async{
@@ -48,13 +47,6 @@ void messagesStream()async{
     }
 }
 
-void getMessages()async{
-    final messages = await _db.collection('messages').getDocuments();
-    for (var message in messages.documents){
-        print(message.data);
-    }
-}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +63,7 @@ void getMessages()async{
           IconButton(
               icon: Icon(Icons.shop),
               onPressed: () {
-                getMessages();
+                messagesStream();
               }),
         ],
         title: Text('⚡️Chat'),
@@ -82,6 +74,29 @@ void getMessages()async{
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            StreamBuilder<QuerySnapshot>(
+             stream: _db.collection('messages').snapshots(),
+             builder: (context,snapshot){
+               if(snapshot.hasData){
+                 final messages = snapshot.data.documents;
+                 List<Text> messageWidgets = [];
+
+                 for(var message in messages){
+                   final messageText = message.data['text'];
+                   final messageSender= message.data['sender'];
+
+                   final messageWidget = Text('$messageText from $messageSender');
+                   messageWidgets.add(messageWidget);
+                 }
+
+                 return Column(
+                   children: messageWidgets,
+                 );
+                 
+                 
+               }
+             }, 
+        ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
