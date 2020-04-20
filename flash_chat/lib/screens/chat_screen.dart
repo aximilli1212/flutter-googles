@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flash_chat/components/message_bubble.dart';
+import 'package:flash_chat/components/message_stream.dart';
 
 class ChatScreen extends StatefulWidget {
   static String route = 'chat_screen';
@@ -11,6 +11,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final messageTextController = TextEditingController();
   final _db = Firestore.instance;
   final _auth = FirebaseAuth.instance;
   
@@ -61,11 +62,6 @@ void messagesStream()async{
                 Navigator.pop(context);
                 //Implement logout functionality
               }),
-          IconButton(
-              icon: Icon(Icons.shop),
-              onPressed: () {
-                messagesStream();
-              }),
         ],
         title: Text('⚡️Chat'),
         backgroundColor: Colors.lightBlueAccent,
@@ -75,41 +71,7 @@ void messagesStream()async{
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            StreamBuilder<QuerySnapshot>(
-             stream: _db.collection('messages').snapshots(),
-             builder: (context,snapshot){
-               if(snapshot.hasData){
-                 final messages = snapshot.data.documents;
-                 List<MessageBubble> messageBubbles = [];
-
-                 for(var message in messages){
-                   final messageText = message.data['text'];
-                   final messageSender= message.data['sender'];
-
-                   final messageBubble = MessageBubble(
-                       text:'$messageText ',
-                     sender: '$messageSender',
-                   );
-
-                   messageBubbles.add(messageBubble);
-                 }
-
-                 return Expanded(
-                     child: ListView(
-                       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                     children: messageBubbles,
-                   ),
-                 );
-
-               }else{
-                 return Center(
-                   child: CircularProgressIndicator(
-                     backgroundColor: Colors.grey,
-                   ),
-                 );
-               }
-             }, 
-        ),
+            MessageStream(db: _db),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
@@ -117,6 +79,8 @@ void messagesStream()async{
                 children: <Widget>[
                   Expanded(
                     child: TextField(
+                       autofocus: true,
+                      controller: messageTextController,
                       onChanged: (value) {
                        messageText = value;
                       },
@@ -125,14 +89,11 @@ void messagesStream()async{
                   ),
                   FlatButton(
                     onPressed: () async{
-                      //Implement send functionality.
-                  var savedData = await _db.collection('messages').add({
+                      messageTextController.clear();
+                      var savedData = await _db.collection('messages').add({
                       'text': messageText,
                       'sender': loggedInUser.email
                     });
-
-                  print(savedData);
-                    
                     },
                     child: Text(
                       'Send',
@@ -148,3 +109,4 @@ void messagesStream()async{
     );
   }
 }
+
