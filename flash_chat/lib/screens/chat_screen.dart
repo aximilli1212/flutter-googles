@@ -79,26 +79,23 @@ void messagesStream()async{
              builder: (context,snapshot){
                if(snapshot.hasData){
                  final messages = snapshot.data.documents;
-                 List<Text> messageWidgets = [];
+                 List<MessageBubble> messageBubbles = [];
 
                  for(var message in messages){
                    final messageText = message.data['text'];
                    final messageSender= message.data['sender'];
 
-                   final messageWidget = Text(
-                       '$messageText from $messageSender',
-                   style: TextStyle(
-                     fontSize: 20.0,
-                   ),
+                   final messageBubble = MessageBubble(
+                       text:'$messageText from $messageSender',
                    );
 
-                   messageWidgets.add(messageWidget);
+                   messageBubbles.add(messageBubble);
                  }
 
                  return Expanded(
                      child: ListView(
                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                     children: messageWidgets,
+                     children: messageBubbles,
                    ),
                  );
 
@@ -151,9 +148,29 @@ void messagesStream()async{
 }
 
 class MessageBubble extends StatelessWidget {
+
+  MessageBubble({this.sender,this.text});
+
+  final String sender;
+  final String text;
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: EdgeInsets.all(10.0) ,
+      child: Material(
+        color: Colors.blue,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical:10.0, horizontal: 20.0),
+          child: Text(text,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+          ),
+          ),
+        ),
+      ),
+    );
   }
 }
 
