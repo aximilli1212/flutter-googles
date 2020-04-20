@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flash_chat/components/message_bubble.dart';
 
 class ChatScreen extends StatefulWidget {
   static String route = 'chat_screen';
@@ -147,43 +148,3 @@ void messagesStream()async{
     );
   }
 }
-
-class MessageBubble extends StatelessWidget {
-
-  MessageBubble({this.sender,this.text});
-
-  final String sender;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(10.0) ,
-      child: Column(
-        children: <Widget>[
-          Material(
-            borderRadius:BorderRadius.circular(30.0)  ,
-            elevation: 6.0,
-            color: Colors.lightBlueAccent,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical:10.0, horizontal: 20.0),
-              child: Text(text,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-              ),
-              ),
-            ),
-          ),
-          Text(sender,
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 10.0,
-          ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
