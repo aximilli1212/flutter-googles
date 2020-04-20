@@ -86,7 +86,8 @@ void messagesStream()async{
                    final messageSender= message.data['sender'];
 
                    final messageBubble = MessageBubble(
-                       text:'$messageText from $messageSender',
+                       text:'$messageText ',
+                     sender: '$messageSender',
                    );
 
                    messageBubbles.add(messageBubble);
@@ -158,17 +159,29 @@ class MessageBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(10.0) ,
-      child: Material(
-        color: Colors.blue,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical:10.0, horizontal: 20.0),
-          child: Text(text,
+      child: Column(
+        children: <Widget>[
+          Material(
+            borderRadius:BorderRadius.circular(30.0)  ,
+            elevation: 6.0,
+            color: Colors.lightBlueAccent,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical:10.0, horizontal: 20.0),
+              child: Text(text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+              ),
+              ),
+            ),
+          ),
+          Text(sender,
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
+            color: Colors.grey,
+            fontSize: 10.0,
           ),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
