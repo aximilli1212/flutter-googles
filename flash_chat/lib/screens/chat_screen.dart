@@ -92,8 +92,12 @@ void messagesStream()async{
                  return Column(
                    children: messageWidgets,
                  );
-                 
-                 
+               }else{
+                 return Center(
+                   child: CircularProgressIndicator(
+                     backgroundColor: Colors.grey,
+                   ),
+                 );
                }
              }, 
         ),
