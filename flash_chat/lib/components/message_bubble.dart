@@ -13,10 +13,11 @@ class MessageBubble extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(10.0) ,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           Material(
             borderRadius:BorderRadius.circular(30.0)  ,
-            elevation: 6.0,
+            elevation: 2.0,
             color: Colors.lightBlueAccent,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical:10.0, horizontal: 20.0),
@@ -31,7 +32,7 @@ class MessageBubble extends StatelessWidget {
           Text(sender,
             style: TextStyle(
               color: Colors.grey,
-              fontSize: 10.0,
+              fontSize: 14.0,
             ),
           )
         ],
