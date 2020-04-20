@@ -85,13 +85,23 @@ void messagesStream()async{
                    final messageText = message.data['text'];
                    final messageSender= message.data['sender'];
 
-                   final messageWidget = Text('$messageText from $messageSender');
+                   final messageWidget = Text(
+                       '$messageText from $messageSender',
+                   style: TextStyle(
+                     fontSize: 20.0,
+                   ),
+                   );
+
                    messageWidgets.add(messageWidget);
                  }
 
-                 return Column(
-                   children: messageWidgets,
+                 return Expanded(
+                     child: ListView(
+                       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                     children: messageWidgets,
+                   ),
                  );
+
                }else{
                  return Center(
                    child: CircularProgressIndicator(
@@ -139,3 +149,11 @@ void messagesStream()async{
     );
   }
 }
+
+class MessageBubble extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
