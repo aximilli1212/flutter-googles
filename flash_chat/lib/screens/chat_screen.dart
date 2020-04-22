@@ -71,7 +71,7 @@ void messagesStream()async{
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            MessageStream(db: _db),
+            MessageStream(db: _db, currentUser: loggedInUser),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
