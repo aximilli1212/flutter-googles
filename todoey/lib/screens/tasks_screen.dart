@@ -4,8 +4,14 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.lightBlueAccent,
+      ),
       backgroundColor: Colors.lightBlueAccent,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 80.0, left: 30.0, right: 30.0, bottom: 30.0),
@@ -47,7 +53,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular (20.0))
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0), topRight: Radius.circular (40.0))
               ),
             ),
           )
