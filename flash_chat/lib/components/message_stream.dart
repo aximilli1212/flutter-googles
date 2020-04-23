@@ -22,7 +22,7 @@ class MessageStream extends StatelessWidget {
       stream: _db.collection('messages').snapshots(),
       builder: (context,snapshot){
         if(snapshot.hasData){
-          final messages = snapshot.data.documents;
+          final messages = snapshot.data.documents.reversed;
           List<MessageBubble> messageBubbles = [];
 
           for(var message in messages){
