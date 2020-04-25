@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:todoey/components/TaskList.dart';
 class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -55,6 +55,7 @@ class TasksScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0), topRight: Radius.circular (40.0))
               ),
+              child: TaskList(),
             ),
           )
         ],
@@ -62,3 +63,4 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
+
