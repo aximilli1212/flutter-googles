@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/components/TaskList.dart';
 class TasksScreen extends StatelessWidget {
+
+  Widget buildBottomSheet(BuildContext context){
+    return Container(
+      child: Center(
+        child: Text(
+          'I am brave, i am bruised.'
+        ),
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            showModalBottomSheet(context: context, builder: buildBottomSheet);
+          },
         child: Icon(Icons.add),
         backgroundColor: Colors.lightBlueAccent,
       ),
