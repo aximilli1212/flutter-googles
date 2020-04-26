@@ -25,10 +25,10 @@ class _TaskListState extends State<TaskList> {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
       children: <Widget>[
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
+        TaskTile(taskTitle: tasks[0].name,isChecked: tasks[0].isDone),
+        TaskTile(taskTitle: tasks[0].name,isChecked: tasks[0].isDone),
+        TaskTile(taskTitle: tasks[0].name,isChecked: tasks[0].isDone),
+        TaskTile(taskTitle: tasks[0].name,isChecked: tasks[0].isDone),
       ],
     );
   }
