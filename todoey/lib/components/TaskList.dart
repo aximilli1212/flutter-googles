@@ -4,14 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todoey/models/task_data.dart';
 
 
-class TaskList extends StatefulWidget {
-
-  @override
-  _TaskListState createState() => _TaskListState();
-}
-
-class _TaskListState extends State<TaskList> {
-
+class TaskList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +12,11 @@ class _TaskListState extends State<TaskList> {
       padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
       itemBuilder: (context,index){
         return TaskTile(
-          taskTitle: widget.tasks[index].name,
-          isChecked: widget.tasks[index].isDone,
+          taskTitle: Provider.of<TaskData>(context).tasks[index].name,
+          isChecked: Provider.of<TaskData>(context).tasks[index].isDone,
         );
       },
-      itemCount: widget.tasks.length,
+      itemCount: Provider.of<TaskData>(context).tasks.length,
     );
   }
 }
