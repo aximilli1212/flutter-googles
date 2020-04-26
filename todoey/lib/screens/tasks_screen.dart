@@ -24,7 +24,11 @@ class _TasksScreenState extends State<TasksScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
           onPressed: (){
-            showModalBottomSheet(context: context, builder: (context)=> AddTaskScreen(taskSet: tasks));
+            showModalBottomSheet(context: context,
+                builder: (context)=> AddTaskScreen(newTaskCallback:
+                        ( newTaskTitle){
+                print(newTaskTitle);
+            }));
           },
         child: Icon(Icons.add),
         backgroundColor: Colors.lightBlueAccent,
@@ -75,7 +79,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0), topRight: Radius.circular (40.0))
               ),
-              child: TaskList(),
+              child: TaskList(tasks: tasks,),
             ),
           )
         ],
