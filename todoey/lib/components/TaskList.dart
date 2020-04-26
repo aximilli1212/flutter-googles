@@ -5,7 +5,7 @@ import 'package:todoey/models/task.dart';
 
 class TaskList extends StatefulWidget {
 
-  final List tasks;
+  final List<Task> tasks;
 
   TaskList({this.tasks});
 
@@ -22,11 +22,11 @@ class _TaskListState extends State<TaskList> {
       padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
       itemBuilder: (context,index){
         return TaskTile(
-          taskTitle: tasks[index].name,
-          isChecked: tasks[index].isDone,
+          taskTitle: widget.tasks[index].name,
+          isChecked: widget.tasks[index].isDone,
         );
       },
-      itemCount: tasks.length,
+      itemCount: widget.tasks.length,
     );
   }
 }
