@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/models/task_data.dart';
+import 'package:provider/provider.dart';
 
 
 class AddTaskScreen extends StatelessWidget {
@@ -54,7 +56,7 @@ AddTaskScreen({this.newTaskCallback});
                 ),
                 RaisedButton(
                   onPressed:(){
-                      newTaskCallback(newTask);
+                      Provider.of<TaskData>(context).addTask(newTask);
                 },
                   child: Text('Add', style: TextStyle(color: Colors.white),),
                   color: Colors.lightBlueAccent,
