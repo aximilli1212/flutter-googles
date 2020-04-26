@@ -9,4 +9,8 @@ class TaskData extends ChangeNotifier{
     Task(name:"World in his hands."),
   ];
 
+  int get taskCount {
+    return tasks.length;
+  }
+
 }
