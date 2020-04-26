@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class AddTaskScreen extends StatefulWidget {
+class AddTaskScreen extends StatelessWidget {
 
-final List taskSet;
+final Function newTaskCallback;
 
-AddTaskScreen({this.taskSet});
-
-  @override
-  _AddTaskScreenState createState() => _AddTaskScreenState();
-}
-
-class _AddTaskScreenState extends State<AddTaskScreen> {
+AddTaskScreen({this.newTaskCallback});
 
   String newTask;
 
@@ -60,9 +54,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 ),
                 RaisedButton(
                   onPressed:(){
-
+                      newTaskCallback(newTask);
                 },
-
                   child: Text('Add', style: TextStyle(color: Colors.white),),
                   color: Colors.lightBlueAccent,
                 )
