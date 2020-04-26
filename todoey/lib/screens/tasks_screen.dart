@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/components/TaskList.dart';
 import 'package:todoey/models/task.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_data.dart';
 import 'add_task.dart';
 
 class TasksScreen extends StatefulWidget {
@@ -12,9 +14,7 @@ class TasksScreen extends StatefulWidget {
 
 class _TasksScreenState extends State<TasksScreen> {
 
-  List<Task> tasks = [
-    Task(name:"Buy Sugar"),
-  ];
+
 
 
   @override
