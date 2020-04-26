@@ -14,8 +14,6 @@ class _TasksScreenState extends State<TasksScreen> {
 
   List<Task> tasks = [
     Task(name:"Buy Sugar"),
-    Task(name:"Call Sumanguru yino."),
-    Task(name:"We were made to be courageous."),
   ];
 
 
