@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/foundation.dart';
 import 'package:todoey/models/task.dart';
 
@@ -8,6 +10,10 @@ class TaskData extends ChangeNotifier{
     Task(name:"He got the whole"),
     Task(name:"World in his hands."),
   ];
+
+  UnmodifiableListView<Task> get tasks{
+    return UnmodifiableListView(_tasks);
+}
 
   int get taskCount {
     return _tasks.length;
