@@ -56,7 +56,8 @@ AddTaskScreen({this.newTaskCallback});
                 ),
                 RaisedButton(
                   onPressed:(){
-                      Provider.of<TaskData>(context).addTask(newTask);
+                      Provider.of<TaskData>(context, listen: false).addTask(newTask);
+                      Navigator.pop(context);
                 },
                   child: Text('Add', style: TextStyle(color: Colors.white),),
                   color: Colors.lightBlueAccent,
