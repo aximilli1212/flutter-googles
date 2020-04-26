@@ -8,15 +8,19 @@ class TaskList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
-      itemBuilder: (context,index){
-        return TaskTile(
-          taskTitle: Provider.of<TaskData>(context).tasks[index].name,
-          isChecked: Provider.of<TaskData>(context).tasks[index].isDone,
+    return Consumer<TaskData>(
+      builder: (context, taskData, child){
+        return  ListView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
+          itemBuilder: (context,index){
+            return TaskTile(
+              taskTitle: taskData.tasks[index].name,
+              isChecked: taskData.tasks[index].isDone,
+            );
+          },
+          itemCount: taskData.tasks.length,
         );
-      },
-      itemCount: Provider.of<TaskData>(context).tasks.length,
+      }
     );
   }
 }
