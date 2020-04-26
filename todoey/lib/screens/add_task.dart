@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 
-class AddTaskScreen extends StatelessWidget {
-  const AddTaskScreen({
-    Key key,
-  }) : super(key: key);
+class AddTaskScreen extends StatefulWidget {
+
+
+  @override
+  _AddTaskScreenState createState() => _AddTaskScreenState();
+}
+
+class _AddTaskScreenState extends State<AddTaskScreen> {
+
+  String newTask;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +40,9 @@ class AddTaskScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30.0),
                   child: TextField(
+                    onChanged: (val){
+                      newTask = val;
+                    },
                     textAlign: TextAlign.center,
                     autofocus: true,
                     cursorColor: Colors.lightBlueAccent,
@@ -48,6 +57,7 @@ class AddTaskScreen extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed:(){
+
                 },
 
                   child: Text('Add', style: TextStyle(color: Colors.white),),
