@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_ui/data/data.dart';
+import 'main_body.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,13 +12,23 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepOrangeAccent,
         leading: IconButton(
+          onPressed: (){},
           iconSize: 30.0,
           icon: Icon(Icons.account_circle, color: Colors.white),
         ),
-        backgroundColor: Colors.deepOrangeAccent,
         title: Center(child: Text('Food Delivery')),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: (){},
+            child: Text('Cart (${currentUser.cart.length})',
+            style: TextStyle(fontSize: 20.0, color: Colors.white),),
+          )
+        ],
+
       ),
+      body: MainBody(),
     );
   }
 }
