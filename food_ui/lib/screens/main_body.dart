@@ -6,7 +6,13 @@ class MainBody extends StatelessWidget {
     return ListView(
       children: <Widget>[
         TextField(
+        decoration: InputDecoration(
+          border:OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30.0),
+              borderSide: BorderSide(width: 0.8,color: Colors.deepOrange)
 
+          )
+        ),
         )
       ],
     );
