@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_ui/components/recent_orders.dart';
+import 'package:food_ui/components/recents/recent_orders.dart';
+import 'package:food_ui/components/nearby/nearby_restaurants.dart';
 
 class MainBody extends StatelessWidget {
   @override
@@ -31,6 +32,7 @@ class MainBody extends StatelessWidget {
           ),
         ),
         RecentOrders(),
+        NearbyRestaurants(),
       ],
     );
   }
