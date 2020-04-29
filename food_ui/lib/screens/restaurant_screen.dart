@@ -84,7 +84,20 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
 
         ],
       ),
-    )
+    ),
+          Row(
+             children: <Widget>[
+               FlatButton(
+                 onPressed: (){},
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(10.0),
+                 ),
+                  color: Theme.of(context).primaryColor,
+                 padding: EdgeInsets.symmetric(horizontal: 30.0),
+                 child: Text('Reviewss', style: TextStyle(color: Colors.white),),
+               )
+             ],
+          )
         ],
       ),
     );
