@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ui/data/data.dart';
 import 'package:food_ui/models/order.dart';
-import 'package:food_ui/components/build_recent_order.dart';
+import 'package:food_ui/components/recents/build_recent_order.dart';
 
 class RecentOrders extends StatelessWidget {
 
