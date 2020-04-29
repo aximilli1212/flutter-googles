@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ui/models/restaurant.dart';
 import 'package:food_ui/data/data.dart';
+import 'package:food_ui/components/nearby/rating_starts.dart';
 
 class BuildRestaurants extends StatelessWidget {
 
@@ -43,8 +44,8 @@ class BuildRestaurants extends StatelessWidget {
                            ),
                            overflow: TextOverflow.ellipsis,
                          ),
-//                         RatingStars(),
-                       SizedBox(height: 4.0),
+                         RatingStars(restaurant.rating),
+//                       SizedBox(height: 4.0),
                          Text(
                            restaurant.address,
                            style: TextStyle(

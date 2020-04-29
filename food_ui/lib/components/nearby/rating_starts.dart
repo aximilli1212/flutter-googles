@@ -7,6 +7,11 @@ class RatingStars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    String stars = '';
+
+    for(int i = 0; i< rating; i++){
+      stars+='⭐ ';
+    }
+    return Text(stars);
   }
 }
