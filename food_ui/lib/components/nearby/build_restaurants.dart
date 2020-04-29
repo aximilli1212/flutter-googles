@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ui/models/restaurant.dart';
 import 'package:food_ui/data/data.dart';
+import 'package:food_ui/screens/restaurant_screen.dart';
 import 'package:food_ui/components/nearby/rating_starts.dart';
 
 class BuildRestaurants extends StatelessWidget {
