@@ -33,10 +33,13 @@ class BuildRestaurants extends StatelessWidget {
                    children: <Widget>[
                      ClipRRect(
                         borderRadius: BorderRadius.circular(15.0),
-                       child: Image(image: AssetImage(restaurant.imageUrl),
-                       width: 150.0,
-                       height: 150.0,
-                         fit: BoxFit.cover,
+                       child: Hero(
+                         tag: restaurant.imageUrl,
+                         child: Image(image: AssetImage(restaurant.imageUrl),
+                         width: 150.0,
+                         height: 150.0,
+                           fit: BoxFit.cover,
+                         ),
                        ),
                      ),
                      Container(
