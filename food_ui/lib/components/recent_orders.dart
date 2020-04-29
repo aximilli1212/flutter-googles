@@ -18,8 +18,14 @@ class RecentOrders extends StatelessWidget {
        ),
        child: Row(
          children: <Widget>[
-            Image(
-              image: AssetImage(order.food.imageUrl),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15.0),
+              child: Image(
+                fit: BoxFit.cover,
+                height: 100.0,
+                width: 100.0,
+                image: AssetImage(order.food.imageUrl),
+              ),
             )
          ],
        ),
