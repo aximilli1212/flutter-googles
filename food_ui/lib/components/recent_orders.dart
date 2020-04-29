@@ -3,6 +3,29 @@ import 'package:food_ui/data/data.dart';
 import 'package:food_ui/models/order.dart';
 
 class RecentOrders extends StatelessWidget {
+
+  _buildRecentOrder(BuildContext context, Order order){
+     return Container(
+       margin: EdgeInsets.all(10.0),
+       width: 320.0,
+       decoration: BoxDecoration(
+         color: Colors.white,
+         borderRadius: BorderRadius.circular(15.0),
+         border: Border.all(
+           width: 1.0,
+           color: Colors.grey[200],
+         )
+       ),
+       child: Row(
+         children: <Widget>[
+            Image(
+              image: AssetImage(order.food.imageUrl),
+            )
+         ],
+       ),
+     );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,13 +42,12 @@ class RecentOrders extends StatelessWidget {
         ),
         Container(
          height: 120.0,
-          color: Colors.grey,
           child: ListView.builder(
+            scrollDirection: Axis.horizontal,
             itemCount: currentUser.orders.length,
             itemBuilder: (BuildContext context, int index){
               Order order = currentUser.orders[index];
-              return Text(order.food.name);
-
+              return _buildRecentOrder(context, order);
             },
           ),
     )
