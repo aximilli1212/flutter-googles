@@ -86,6 +86,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
       ),
     ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              children: <Widget>[
                FlatButton(
                  onPressed: (){},
@@ -94,7 +95,16 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                  ),
                   color: Theme.of(context).primaryColor,
                  padding: EdgeInsets.symmetric(horizontal: 30.0),
-                 child: Text('Reviewss', style: TextStyle(color: Colors.white),),
+                 child: Text('Reviews', style: TextStyle(color: Colors.white),),
+               ),
+               FlatButton(
+                 onPressed: (){},
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(10.0),
+                 ),
+                  color: Theme.of(context).primaryColor,
+                 padding: EdgeInsets.symmetric(horizontal: 30.0),
+                 child: Text('Contact', style: TextStyle(color: Colors.white),),
                )
              ],
           )
