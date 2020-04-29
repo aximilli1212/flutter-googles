@@ -16,9 +16,53 @@ class BuildRestaurants extends StatelessWidget {
                  color: Colors.white,
                  borderRadius: BorderRadius.circular(15.0),
                  border: Border.all(
-                   width: 20.0,
-                   color: Colors.grey,
+                   width: 0.8,
+                   color: Colors.grey[200],
                  ),
+               ),
+               child: Row(
+                 children: <Widget>[
+                   ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                     child: Image(image: AssetImage(restaurant.imageUrl),
+                     width: 150.0,
+                     height: 150.0,
+                       fit: BoxFit.cover,
+                     ),
+                   ),
+                   Container(
+                     padding: EdgeInsets.only(left: 20.0),
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: <Widget>[
+                         Text(
+                           restaurant.name,
+                           style: TextStyle(
+                             fontSize: 16.0,
+                             fontWeight: FontWeight.bold,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         ),
+//                         RatingStars(),
+                       SizedBox(height: 4.0),
+                         Text(
+                           restaurant.address,
+                           style: TextStyle(
+                             fontSize: 16.0,
+                             fontWeight: FontWeight.w600,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         ),
+                         SizedBox(height: 4.0),
+                         Text(
+                           '0.2 Miles Away',
+                           overflow: TextOverflow.ellipsis,
+
+                         )
+                       ],
+                     ),
+                   ),
+                 ],
                ),
 
          )
