@@ -42,36 +42,38 @@ class BuildRestaurants extends StatelessWidget {
                          ),
                        ),
                      ),
-                     Container(
-                       padding: EdgeInsets.only(left: 20.0),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: <Widget>[
-                           Text(
-                             restaurant.name,
-                             style: TextStyle(
-                               fontSize: 16.0,
-                               fontWeight: FontWeight.bold,
+                     Expanded(
+                       child: Container(
+                         padding: EdgeInsets.only(left: 20.0),
+                         child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: <Widget>[
+                             Text(
+                               restaurant.name,
+                               style: TextStyle(
+                                 fontSize: 16.0,
+                                 fontWeight: FontWeight.bold,
+                               ),
+                               overflow: TextOverflow.ellipsis,
                              ),
-                             overflow: TextOverflow.ellipsis,
-                           ),
-                           RatingStars(restaurant.rating),
+                             RatingStars(restaurant.rating),
 //                       SizedBox(height: 4.0),
-                           Text(
-                             restaurant.address,
-                             style: TextStyle(
-                               fontSize: 16.0,
-                               fontWeight: FontWeight.w600,
+                             Text(
+                               restaurant.address,
+                               style: TextStyle(
+                                 fontSize: 16.0,
+                                 fontWeight: FontWeight.w600,
+                               ),
+                               overflow: TextOverflow.ellipsis,
                              ),
-                             overflow: TextOverflow.ellipsis,
-                           ),
-                           SizedBox(height: 4.0),
-                           Text(
-                             '0.2 Miles Away',
-                             overflow: TextOverflow.ellipsis,
+                             SizedBox(height: 4.0),
+                             Text(
+                               '0.2 Miles Away',
+                               overflow: TextOverflow.ellipsis,
 
-                           )
-                         ],
+                             )
+                           ],
+                         ),
                        ),
                      ),
                    ],

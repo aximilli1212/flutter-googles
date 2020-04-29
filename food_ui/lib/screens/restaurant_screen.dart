@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ui/models/restaurant.dart';
+import 'package:food_ui/components/nearby/rating_starts.dart';
 
 class RestaurantScreen extends StatefulWidget {
 
@@ -45,12 +46,45 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       iconSize: 30.0,
                       onPressed: (){},
                     ),
-
                   ],
     ),
               )
             ],
+          ),
+    Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(widget.restaurant.name,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text('0.2 miles away',
+                style: TextStyle(
+                  fontSize: 18.0,
+                ),
+              ),
+            ],
+          ),
+          RatingStars(widget.restaurant.rating),
+          SizedBox(height: 6.0),
+          Text(
+            widget.restaurant.address,
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.grey,
+            ),
           )
+
+        ],
+      ),
+    )
         ],
       ),
     );
