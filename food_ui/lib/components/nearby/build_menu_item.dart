@@ -10,8 +10,20 @@ class BuildMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("poop"),
+    return Stack(
+       children: <Widget>[
+         Container(
+           height: 175.0,
+           width: 175.0,
+           decoration: BoxDecoration(
+             image: DecorationImage(
+                 image: AssetImage(
+                     food.imageUrl
+                 ),
+             ),
+           ),
+         )
+       ],
     );
   }
 }
