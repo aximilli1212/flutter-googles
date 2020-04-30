@@ -78,7 +78,18 @@ class BuildMenuItem extends StatelessWidget {
            Positioned(
              bottom: 10,
              right: 10.0,
-             child: Text('Lingo'),
+             child:Container(
+               decoration: BoxDecoration(
+                   color: Theme.of(context).primaryColor,
+                   borderRadius: BorderRadius.circular(30.0)
+               ),
+               child: IconButton(
+                 icon:Icon(Icons.add),
+                 iconSize: 30.0,
+                 color: Colors.white,
+                 onPressed: (){},
+               ),
+             ),
            )
          ],
       ),
