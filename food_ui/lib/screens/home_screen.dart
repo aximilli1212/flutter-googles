@@ -29,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(fontSize: 20.0, color: Colors.white),),
           )
         ],
-
       ),
       body: MainBody(),
     );
