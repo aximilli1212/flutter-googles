@@ -107,7 +107,20 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                  child: Text('Contact', style: TextStyle(color: Colors.white),),
                )
              ],
-          )
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text('Menu',
+          style: TextStyle(
+            fontSize: 22.0,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 1.2,
+          ),
+          ),
+          SizedBox(height: 10.0),
+
+
         ],
       ),
     );
