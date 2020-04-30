@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ui/models/restaurant.dart';
 import 'package:food_ui/models/food.dart';
 import 'package:food_ui/components/nearby/rating_starts.dart';
+import 'package:food_ui/components/nearby/build_menu_item.dart';
 
 class RestaurantScreen extends StatefulWidget {
 
