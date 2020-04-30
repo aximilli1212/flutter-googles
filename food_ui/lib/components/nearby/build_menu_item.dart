@@ -12,6 +12,7 @@ class BuildMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Stack(
+        alignment: Alignment.center,
          children: <Widget>[
            Container(
              height: 175.0,
@@ -39,8 +40,45 @@ class BuildMenuItem extends StatelessWidget {
                      Colors.black87.withOpacity(0.3),
                      Colors.black54.withOpacity(0.3),
                      Colors.black38.withOpacity(0.3),
-               ])
+               ],
+                 stops: [
+                   0.1,
+                   0.4,
+                   0.6,
+                   0.9
+                 ]
+               ),
              ),
+           ),
+           Positioned(
+             bottom: 65.0,
+             child: Column(
+               children: <Widget>[
+                 Text(
+                   food.name,
+                   style: TextStyle(
+                     color: Colors.white,
+                     fontSize: 24.0,
+                     fontWeight: FontWeight.bold,
+                     letterSpacing: 1.2,
+                   ),
+                 ),
+                 Text(
+                   '\$${food.price}',
+                   style: TextStyle(
+                     color: Colors.white,
+                     fontSize: 18.0,
+                     fontWeight: FontWeight.bold,
+                     letterSpacing: 1.1,
+                   ),
+                 )
+               ],
+             ),
+           ),
+           Positioned(
+             bottom: 10,
+             right: 10.0,
+             child: Text('Lingo'),
            )
          ],
       ),
