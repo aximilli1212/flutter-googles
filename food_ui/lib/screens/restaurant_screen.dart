@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ui/models/restaurant.dart';
+import 'package:food_ui/models/food.dart';
 import 'package:food_ui/components/nearby/rating_starts.dart';
 
 class RestaurantScreen extends StatefulWidget {
@@ -119,6 +120,16 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           ),
           ),
           SizedBox(height: 10.0),
+          Expanded(
+            child: GridView.count(
+              padding: EdgeInsets.all(10.0),
+              crossAxisCount: 2,
+              children: List.generate(widget.restaurant.menu.length, (index){
+                Food food = widget.restaurant.menu[index];
+                return BuildMenuItem(food:food);
+              }),
+            ),
+          )
 
 
         ],
