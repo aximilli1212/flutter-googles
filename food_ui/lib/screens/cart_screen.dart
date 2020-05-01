@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ui/data/data.dart';
 import 'package:food_ui/models/order.dart';
+import 'package:food_ui/components/cart/build_cart_item.dart';
 
 class CartScreen extends StatefulWidget {
   @override
@@ -17,9 +18,15 @@ class _CartScreenState extends State<CartScreen> {
       ),
       body: ListView.separated(
           itemBuilder: (BuildContext context, int index){
-            Order order = currentUser.cart[index]
+            Order order = currentUser.cart[index];
+            return BuildCartItem(order: order);
 
-          }, separatorBuilder: null, itemCount: null),
+          }, separatorBuilder: (BuildContext context, int index){
+            return Divider(
+              height: 1.0,
+              color: Colors.red,
+            );
+      }, itemCount: currentUser.cart.length),
     );
   }
 }
