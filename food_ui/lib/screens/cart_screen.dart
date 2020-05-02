@@ -77,6 +77,7 @@ class _CartScreenState extends State<CartScreen> {
                          )
                       ],
                     ),
+                    SizedBox(height: 100.0),
                   ],
                 ),
               );
@@ -86,7 +87,33 @@ class _CartScreenState extends State<CartScreen> {
               height: 1.0,
               color: Colors.red,
             );
-      }, itemCount: currentUser.cart.length + 1),
+      },
+          itemCount: currentUser.cart.length + 1),
+      bottomSheet: Container(
+        child: Center(
+          child: Text(
+            'CHECKOUT',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+            ),
+          ),
+        ),
+        height: 100.0,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0,-1),
+              blurRadius: 6.0,
+            )
+          ]
+        ),
+      ),
     );
   }
 }
