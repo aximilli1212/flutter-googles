@@ -11,6 +11,13 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
+    double totalPrice = 0;
+    currentUser.cart.forEach(
+        (Order order) => totalPrice += order.quantity * order.food.price
+    );
+
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
@@ -18,15 +25,68 @@ class _CartScreenState extends State<CartScreen> {
       ),
       body: ListView.separated(
           itemBuilder: (BuildContext context, int index){
-            Order order = currentUser.cart[index];
-            return BuildCartItem(order: order);
-
+            if(index < currentUser.cart.length){
+              Order order = currentUser.cart[index];
+              return BuildCartItem(order: order);
+             }else{
+              return Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                         Text(
+                           'Estimated Delivery Time',
+                           style: TextStyle(
+                             fontSize: 20.0,
+                             fontWeight: FontWeight.w600,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         ),
+                        Text(
+                           '25 min',
+                           style: TextStyle(
+                             fontSize: 20.0,
+                             fontWeight: FontWeight.w600,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         )
+                      ],
+                    ),
+                    SizedBox(height: 10.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                         Text(
+                           'Total Cost',
+                           style: TextStyle(
+                             fontSize: 20.0,
+                             fontWeight: FontWeight.w600,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         ),
+                        Text(
+                           '\$${totalPrice.toStringAsFixed(2)}',
+                           style: TextStyle(
+                             color: Colors.green[600],
+                             fontSize: 20.0,
+                             fontWeight: FontWeight.w600,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         )
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            }
           }, separatorBuilder: (BuildContext context, int index){
             return Divider(
               height: 1.0,
               color: Colors.red,
             );
-      }, itemCount: currentUser.cart.length),
+      }, itemCount: currentUser.cart.length + 1),
     );
   }
 }
