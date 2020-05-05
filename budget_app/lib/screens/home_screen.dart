@@ -10,8 +10,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+//    return MaterialApp(
+      return Scaffold(
         backgroundColor: Colors.white,
           body: CustomScrollView(
           slivers: <Widget>[
@@ -59,8 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
       ),
-      ),
-
     );
   }
 }
