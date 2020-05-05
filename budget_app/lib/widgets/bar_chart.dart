@@ -9,10 +9,19 @@ class BarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double mostExpensive = 0;
+
+    spending.forEach((double price){
+      if(price > mostExpensive){
+        mostExpensive = price;
+      }
+    });
+
+
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15.0),
           child: Text('Weekly Spending',
           style: TextStyle(
              fontWeight: FontWeight.bold,
@@ -47,7 +56,19 @@ class BarChart extends StatelessWidget {
           ],
         ),
         SizedBox(height: 30.0),
-        Bar(label:'su', amountSpent: expenses[0], mostExpensive: 200 ,)
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
+    children: <Widget>[
+      Bar(label:'su', amountSpent: spending[0], mostExpensive: mostExpensive),
+      Bar(label:'mon', amountSpent: spending[1], mostExpensive: mostExpensive),
+      Bar(label:'tue', amountSpent: spending[2], mostExpensive: mostExpensive),
+      Bar(label:'wed', amountSpent: spending[3], mostExpensive: mostExpensive),
+      Bar(label:'thu', amountSpent: spending[4], mostExpensive: mostExpensive),
+      Bar(label:'fri', amountSpent: spending[5], mostExpensive: mostExpensive),
+      Bar(label:'sat', amountSpent: spending[6], mostExpensive: mostExpensive),
+    ],
+    )
       ],
     );
   }

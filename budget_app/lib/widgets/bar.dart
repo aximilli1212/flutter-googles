@@ -8,7 +8,7 @@ class Bar extends StatelessWidget {
   final double _maxBarHeight = 150.0;
 
 
-  Bar({this.label,this.amountSpent,this.mostExpensive})
+  Bar({this.label,this.amountSpent,this.mostExpensive});
 
 
   @override
@@ -17,7 +17,8 @@ class Bar extends StatelessWidget {
 
     return Column(
       children: <Widget>[
-        Text('\$${amountSpent.toStringAsFixed(2)}'),
+        Text('\$${amountSpent.toStringAsFixed(2)}', style: TextStyle(fontWeight: FontWeight.w600),),
+        SizedBox(height: 6.0),
         Container(
           height: barHeight,
           width: 18.0,
@@ -26,7 +27,8 @@ class Bar extends StatelessWidget {
             borderRadius: BorderRadius.circular(6.0),
           ),
         ),
-        Text(label),
+        SizedBox(height: 6.0),
+        Text(label, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),),
       ],
     );
   }
