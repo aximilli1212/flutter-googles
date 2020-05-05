@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:budget_app/widgets/bar.dart';
 
 class BarChart extends StatelessWidget {
 
@@ -44,7 +45,9 @@ class BarChart extends StatelessWidget {
               onPressed: (){},
             )
           ],
-        )
+        ),
+        SizedBox(height: 30.0),
+        Bar(label:'su', amountSpent: expenses[0], mostExpensive: 200 ,)
       ],
     );
   }

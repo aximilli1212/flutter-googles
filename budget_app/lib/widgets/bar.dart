@@ -15,6 +15,19 @@ class Bar extends StatelessWidget {
   Widget build(BuildContext context) {
     final barHeight = amountSpent / mostExpensive * _maxBarHeight;
 
-    return Container();
+    return Column(
+      children: <Widget>[
+        Text('\$${amountSpent.toStringAsFixed(2)}'),
+        Container(
+          height: barHeight,
+          width: 18.0,
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            borderRadius: BorderRadius.circular(6.0),
+          ),
+        ),
+        Text(label),
+      ],
+    );
   }
 }
