@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100.0,
                   color: Colors.red,
                 );
-              }, childCount: 10),
+              }, childCount: 1),
 
             )
           ],
