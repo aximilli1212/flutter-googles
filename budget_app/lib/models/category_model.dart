@@ -1,4 +1,4 @@
-import 'package:flutter_budget_ui/models/expense_model.dart';
+import 'package:budget_app/models/expense_model.dart';
 
 class Category {
   final String name;
