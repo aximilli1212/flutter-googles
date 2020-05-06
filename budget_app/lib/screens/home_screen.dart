@@ -38,26 +38,42 @@ class _HomeScreenState extends State<HomeScreen> {
              ),
             SliverList(
               delegate: SliverChildBuilderDelegate((BuildContext context, int index){
-                return Container(
-                  margin: EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        offset: Offset(0,2),
-                        blurRadius: 6.0
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: BarChart(spending: weeklySpending),
-                );
-              }, childCount: 1),
+                if(index == 0){
+                  return FullBarView();
+                }else{
+                  final Category = categories[index - 1];
+                  return BuildCategory('onitashha');
+                }
+              }, childCount: 1 + categories.length),
 
             )
           ],
       ),
+    );
+  }
+}
+
+class FullBarView extends StatelessWidget {
+  const FullBarView({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            offset: Offset(0,2),
+            blurRadius: 6.0
+          )
+        ],
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: BarChart(spending: weeklySpending),
     );
   }
 }
