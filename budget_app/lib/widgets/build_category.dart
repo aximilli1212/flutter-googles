@@ -43,24 +43,30 @@ class BuildCategory extends StatelessWidget {
                    ],
                  ),
                  SizedBox(height: 10.0),
-                 Stack(
-                   children: <Widget>[
-                     Container(
-                       height: 20.0,
-                       decoration: BoxDecoration(
-                         color: Colors.grey[200],
-                         borderRadius: BorderRadius.circular(15.0)  ,
-                       ),
+                 LayoutBuilder(
+                   builder: (BuildContext context, BoxConstraints constraints)
+                   {
+                     return Stack(
+                       children: <Widget>[
+                         Container(
+                           height: 20.0,
+                           decoration: BoxDecoration(
+                             color: Colors.grey[200],
+                             borderRadius: BorderRadius.circular(15.0)  ,
+                           ),
+                         ),
+                         Container(
+                           height: 20.0,
+                           width: 60.0,
+                           decoration: BoxDecoration(
+                             color: Colors.green,
+                             borderRadius: BorderRadius.circular(15.0)  ,
+                           ),
+                         )
+                       ],
                      ),
-                     Container(
-                       height: 20.0,
-                       width: 60.0,
-                       decoration: BoxDecoration(
-                         color: Colors.green,
-                         borderRadius: BorderRadius.circular(15.0)  ,
-                       ),
-                     )
-                   ],
+                   },
+
                  )
 
                ],
