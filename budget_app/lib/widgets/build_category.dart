@@ -9,6 +9,62 @@ class BuildCategory extends StatelessWidget {
   final double totalAmountSpent;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      padding: EdgeInsets.all(20.0),
+      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10.0),
+      height: 100.0,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            offset: Offset(0,2),
+            blurRadius: 6.0
+          )
+        ]
+      ),
+      child: Column(
+               children: <Widget>[
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: <Widget>[
+                     Text(category.name, style: TextStyle(
+                       fontSize: 20.0,
+                       fontWeight: FontWeight.w600,
+                     ),
+                     ),
+                     Text('\$${(category.maxAmount - totalAmountSpent).toStringAsFixed(2)} / \$${category.maxAmount}',
+                     style: TextStyle(
+                       fontSize: 18.0,
+                       fontWeight: FontWeight.w600,
+                     ),)
+                   ],
+                 ),
+                 SizedBox(height: 10.0),
+                 Stack(
+                   children: <Widget>[
+                     Container(
+                       height: 20.0,
+                       decoration: BoxDecoration(
+                         color: Colors.grey[200],
+                         borderRadius: BorderRadius.circular(15.0)  ,
+                       ),
+                     ),
+                     Container(
+                       height: 20.0,
+                       width: 60.0,
+                       decoration: BoxDecoration(
+                         color: Colors.green,
+                         borderRadius: BorderRadius.circular(15.0)  ,
+                       ),
+                     )
+                   ],
+                 )
+
+               ],
+      ),
+    );
   }
 }
