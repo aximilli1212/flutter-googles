@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   return FullBarView();
                 }else{
                   final Category = categories[index - 1];
-                  return BuildCategory();
+                  return BuildCategory(category: Category, totalAmountSpent: 40.0);
                 }
               }, childCount: 1 + categories.length),
 
