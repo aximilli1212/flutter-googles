@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:budget_app/data/data.dart';
 import 'package:budget_app/widgets/bar_chart.dart';
+import 'package:budget_app/widgets/build_category.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   return FullBarView();
                 }else{
                   final Category = categories[index - 1];
-                  return BuildCategory('onitashha');
+                  return BuildCategory();
                 }
               }, childCount: 1 + categories.length),
 
