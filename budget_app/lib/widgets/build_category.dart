@@ -49,6 +49,10 @@ class BuildCategory extends StatelessWidget {
                      final double percent = (category.maxAmount - totalAmountSpent) / category.maxAmount;
                      double barWidth = percent * maxBarWidth;
 
+                     if(barWidth < 0){
+                       barWidth = 0;
+                     }
+
                      return Stack(
                        children: <Widget>[
                          Container(
@@ -60,9 +64,9 @@ class BuildCategory extends StatelessWidget {
                          ),
                          Container(
                            height: 20.0,
-                           width: 60.0,
+                           width: barWidth,
                            decoration: BoxDecoration(
-                             color: Colors.green,
+                             color: getColor(context, percent),
                              borderRadius: BorderRadius.circular(15.0)  ,
                            ),
                          )
