@@ -17,7 +17,6 @@ class BarChart extends StatelessWidget {
       }
     });
 
-
     return Column(
       children: <Widget>[
         Padding(
