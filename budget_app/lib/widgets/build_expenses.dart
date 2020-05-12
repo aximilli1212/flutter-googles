@@ -31,6 +31,25 @@ class BuildExpenses extends StatelessWidget {
              )
            ]
          ),
+         child: Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           children: <Widget>[
+             Text(expense.name,
+             style: TextStyle(
+               color: Colors.red,
+               fontWeight: FontWeight.w600,
+               fontSize: 20.0
+             ),
+             ),
+             Text('-\$${expense.cost.toStringAsFixed(2)}',
+             style: TextStyle(
+               color: Colors.red,
+               fontWeight: FontWeight.w600,
+               fontSize: 20.0
+             ),
+             ),
+           ],
+         ),
        ));
     });
 
