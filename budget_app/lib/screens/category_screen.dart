@@ -1,4 +1,5 @@
 import 'package:budget_app/helpers/color_helper.dart';
+import 'package:budget_app/widgets/build_expenses.dart';
 import 'package:budget_app/widgets/radial_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_app/models/expense_model.dart';
@@ -70,6 +71,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ),
               ),
             ),
+          SizedBox(height: 10.0),
+          BuildExpenses(expensesList: widget.category.expenses),
         ],
         ),
       ),
