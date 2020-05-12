@@ -18,7 +18,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: MediaQuery.of(context).size.height / 2.5,
                 width: double.infinity,
                 image: AssetImage('assets/images/login_background.jpg'),
-              )
+                fit: BoxFit.cover,
+              ),
+              Text('FRENZY',  style: TextStyle(
+                color: Theme.of(context).primaryColor,
+              ),)
             ],
           ),
         ),
