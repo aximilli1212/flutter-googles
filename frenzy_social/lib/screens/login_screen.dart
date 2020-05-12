@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frenzy_social/widgets/curve_clipper.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
