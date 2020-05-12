@@ -14,11 +14,14 @@ class _LoginScreenState extends State<LoginScreen> {
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: <Widget>[
-              Image(
-                height: MediaQuery.of(context).size.height / 2.5,
-                width: double.infinity,
-                image: AssetImage('assets/images/login_background.jpg'),
-                fit: BoxFit.cover,
+              ClipPath(
+                clipper: CurveClipper(),
+                child: Image(
+                  height: MediaQuery.of(context).size.height / 2.5,
+                  width: double.infinity,
+                  image: AssetImage('assets/images/login_background.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
               SizedBox(height: 10.0),
               Text('FRENZY',  style: TextStyle(
