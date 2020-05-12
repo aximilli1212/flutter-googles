@@ -58,7 +58,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   obscureText: true,
                 ),
-              )
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal:60),
+                alignment: Alignment.center,
+                height: 45.0,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+
+              ),
             ],
           ),
         ),
