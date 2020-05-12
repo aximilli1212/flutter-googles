@@ -20,11 +20,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 image: AssetImage('assets/images/login_background.jpg'),
                 fit: BoxFit.cover,
               ),
+              SizedBox(height: 10.0),
               Text('FRENZY',  style: TextStyle(
                 color: Theme.of(context).primaryColor,
                 fontSize: 34.0,
                 fontWeight: FontWeight.bold,
-                letterSpacing: 1.2,
+                letterSpacing: 12,
               ),),
               SizedBox(height:10.0),
               Padding(
@@ -96,6 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20.0,
+                        color: Colors.white,
                       ),
                       ),
                     ),
