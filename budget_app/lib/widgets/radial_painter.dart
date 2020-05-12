@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class RadialPainter extends CustomPainter{
 
@@ -11,7 +12,18 @@ class RadialPainter extends CustomPainter{
 
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
+   Paint bgLine = Paint()
+     ..color = bgColor
+     ..strokeCap = StrokeCap.round
+       ..style = PaintingStyle.stroke
+       ..strokeWidth = width;
+
+   Paint completeLine = Paint()
+   ..color = lineColor
+   ..strokeCap = StrokeCap.round
+   ..style = PaintingStyle.stroke
+   ..strokeWidth = width;
+
   }
 
   @override
