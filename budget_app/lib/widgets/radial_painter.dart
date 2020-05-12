@@ -24,6 +24,9 @@ class RadialPainter extends CustomPainter{
    ..style = PaintingStyle.stroke
    ..strokeWidth = width;
 
+    Offset center = Offset(size.width / 2, size.height /2);
+    double radius = min(size.width / 2, size.height /2);
+
   }
 
   @override
