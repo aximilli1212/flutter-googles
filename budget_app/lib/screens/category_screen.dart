@@ -52,6 +52,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   blurRadius: 6.0,
                 )]
               ),
+              child: Center(
+                child: Text('\$${amountLeft.toStringAsFixed(2)} / \$${widget.category.maxAmount}', style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w600,
+                ),),
+              ),
             ),
         ],
         ),
