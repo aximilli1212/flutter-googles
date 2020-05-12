@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:budget_app/models/category_model.dart';
+import 'package:budget_app/helpers/color_helper.dart';
 
 class BuildCategory extends StatelessWidget {
 
