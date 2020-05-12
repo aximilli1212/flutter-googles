@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:budget_app/models/category_model.dart';
 import 'package:budget_app/helpers/color_helper.dart';
+import 'package:budget_app/screens/category_screen.dart';
 
 class BuildCategory extends StatelessWidget {
 
@@ -12,7 +13,7 @@ class BuildCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageR)
+        Navigator.push(context, MaterialPageRoute(builder: (_) => CategoryScreen(category: category)));
       },
       child: Container(
         padding: EdgeInsets.all(20.0),
