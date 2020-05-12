@@ -1,3 +1,5 @@
+import 'package:budget_app/models/category_model.dart';
+import 'package:budget_app/models/expense_model.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_app/data/data.dart';
 import 'package:budget_app/widgets/bar_chart.dart';
@@ -42,8 +44,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 if(index == 0){
                   return FullBarView();
                 }else{
-                  final Category = categories[index - 1];
-                  return BuildCategory(category: Category, totalAmountSpent: 40.0);
+                  final Category category = categories[index - 1];
+                  double totalAmountSpent = 0;
+                  category.expenses.forEach((Expense expense){
+                    totalAmountSpent +=expense.cost;
+                  });
+
+                  return BuildCategory(category: category, totalAmountSpent: totalAmountSpent);
                 }
               }, childCount: 1 + categories.length),
 
