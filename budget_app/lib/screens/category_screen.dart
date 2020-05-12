@@ -17,7 +17,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
 
     double totalAmountSpent = 0;
-    widget.category.expenses.forEach((Expense expense){})
+    widget.category.expenses.forEach((Expense expense){
+       totalAmountSpent += expense.cost;
+    });
+
+    final double amountLeft = widget.category.maxAmount - totalAmountSpent;
+    final double percent = amountLeft / widget.category.maxAmount;
 
 
     return Scaffold(
