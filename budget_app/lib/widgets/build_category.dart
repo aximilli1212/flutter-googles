@@ -44,8 +44,11 @@ class BuildCategory extends StatelessWidget {
                  ),
                  SizedBox(height: 10.0),
                  LayoutBuilder(
-                   builder: (BuildContext context, BoxConstraints constraints)
-                   {
+                   builder: (BuildContext context, BoxConstraints constraints) {
+                     final double maxBarWidth = constraints.maxWidth;
+                     final double percent = (category.maxAmount - totalAmountSpent) / category.maxAmount;
+                     double barWidth = percent * maxBarWidth;
+
                      return Stack(
                        children: <Widget>[
                          Container(
@@ -66,7 +69,6 @@ class BuildCategory extends StatelessWidget {
                        ],
                      );
                    },
-
                  )
 
                ],
