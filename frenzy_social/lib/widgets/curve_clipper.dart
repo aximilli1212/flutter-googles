@@ -24,7 +24,7 @@ class CurveClipper extends CustomClipper<Path>{
         endPoint.dx,
         endPoint.dy,
     );
-
+    path.lineTo(size.width, 0);
     path.close();
     return path;
   }
@@ -32,7 +32,7 @@ class CurveClipper extends CustomClipper<Path>{
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) {
     // TODO: implement shouldReclip
-    return null;
+    return false;
   }
 
 }
