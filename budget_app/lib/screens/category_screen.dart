@@ -1,3 +1,5 @@
+import 'package:budget_app/helpers/color_helper.dart';
+import 'package:budget_app/widgets/radial_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_app/models/expense_model.dart';
 import 'package:budget_app/models/category_model.dart';
@@ -52,11 +54,20 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   blurRadius: 6.0,
                 )]
               ),
-              child: Center(
-                child: Text('\$${amountLeft.toStringAsFixed(2)} / \$${widget.category.maxAmount}', style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w600,
-                ),),
+              child: CustomPaint(
+              foregroundPainter: RadialPainter(
+                bgColor: Colors.grey[200],
+                lineColor: getColor(context, percent),
+                percent: percent,
+                width: 15.0
+
+              ),
+                child: Center(
+                  child: Text('\$${amountLeft.toStringAsFixed(2)} / \$${widget.category.maxAmount}', style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),),
+                ),
               ),
             ),
         ],
