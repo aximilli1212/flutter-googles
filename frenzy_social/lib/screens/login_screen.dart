@@ -83,6 +83,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 ),
               ),
+              Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      alignment: Alignment.center,
+                       color: Theme.of(context).primaryColor,
+                      height: 80.0,
+                      child: Text('Dont have an account? Sign Up',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20.0,
+                      ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
