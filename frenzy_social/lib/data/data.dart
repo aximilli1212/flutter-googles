@@ -1,5 +1,5 @@
-import 'package:flutter_social_ui/models/post_model.dart';
-import 'package:flutter_social_ui/models/user_model.dart';
+import 'package:frenzy_social/models/post_model.dart';
+import 'package:frenzy_social/models/user_model.dart';
 
 // Posts
 final _post0 = Post(

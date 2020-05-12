@@ -1,4 +1,4 @@
-import 'package:flutter_social_ui/models/user_model.dart';
+import 'package:frenzy_social/models/user_model.dart';
 
 class Post {
   final String imageUrl;
