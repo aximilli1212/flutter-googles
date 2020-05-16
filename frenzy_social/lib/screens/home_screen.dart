@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         ),
         bottom: TabBar(
           controller: _tabController,
+          indicatorWeight: 3.0,
           labelColor: Theme.of(context).primaryColor,
           labelStyle: TextStyle(
             fontWeight: FontWeight.w600,
@@ -48,6 +49,29 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             Tab(text: 'Latest'),
           ],
         ),
+      ),
+      body: ListView(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: Text('Following',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                ),
+                ),
+              ),
+              Container(
+                height: 80.0,
+                color: Colors.red,
+
+              )
+            ],
+          )
+        ],
       ),
     );
   }
