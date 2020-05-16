@@ -38,7 +38,10 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           controller: _tabController,
           labelColor: Theme.of(context).primaryColor,
           labelStyle: TextStyle(
-
+            fontWeight: FontWeight.w600,
+          ),
+          unselectedLabelStyle: TextStyle(
+            fontSize: 18.0,
           ),
           tabs: <Widget>[
             Tab(text: 'Trending'),
