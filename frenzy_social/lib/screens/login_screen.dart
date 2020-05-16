@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frenzy_social/widgets/curve_clipper.dart';
+import 'package:frenzy_social/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -68,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               GestureDetector(
                 onTap: (){
-
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen(),))
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal:60),
