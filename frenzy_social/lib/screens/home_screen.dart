@@ -70,8 +70,14 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               Container(
                 height: 80.0,
                 color: Colors.red,
-                child: ListView.builder(itemBuilder: (BuildContext context, int index){
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                    itemCount: users.length,
+                    itemBuilder: (BuildContext context, int index){
                   User user = users[index];
+                  return Image(
+                    image: AssetImage(user.profileImageUrl),
+                  );
                 }),
               )
             ],
