@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:frenzy_social/data/data.dart';
+import 'package:frenzy_social/models/user_model.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -67,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               Container(
                 height: 80.0,
                 color: Colors.red,
-
+                child: ListView.builder(itemBuilder: (BuildContext context, int index){
+                  User user = users[index];
+                }),
               )
             ],
           )
