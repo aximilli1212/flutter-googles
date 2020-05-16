@@ -69,7 +69,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
               GestureDetector(
                 onTap: (){
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen(),))
+                   Navigator.pushReplacement(context,
+                       MaterialPageRoute(builder: (_)
+                       => HomeScreen(),
+                   )
+                   );
+
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal:60),
