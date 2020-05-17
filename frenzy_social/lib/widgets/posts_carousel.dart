@@ -43,7 +43,6 @@ class PostsCarousel extends StatelessWidget {
         Container(
           margin: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
-            color: Colors.red,
             borderRadius: BorderRadius.circular(15.0),
             boxShadow: [
               BoxShadow(
@@ -52,6 +51,15 @@ class PostsCarousel extends StatelessWidget {
                 blurRadius: 6.0,
               )
             ]
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Image(
+              height: 400,
+              width: 300.0,
+              image: AssetImage(post.imageUrl),
+              fit: BoxFit.cover,
+            ),
           ),
         )
       ],
