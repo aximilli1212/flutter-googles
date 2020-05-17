@@ -28,10 +28,26 @@ class PostsCarousel extends StatelessWidget {
           child: PageView.builder(
               itemCount: posts.length,
               itemBuilder: (BuildContext context, int index){
-                _buildPosts(context , index);
+                return _buildPosts(context , index);
               }),
         )
       ],
     );
+  }
+
+  _buildPosts(BuildContext context, int index) {
+    Post post = posts[index];
+
+    return Stack(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.all(10.0),
+          decoration: BoxDecoration(
+            color: Colors.red,
+          ),
+        )
+      ],
+    );
+
   }
 }
