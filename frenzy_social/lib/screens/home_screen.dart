@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frenzy_social/data/data.dart';
 import 'package:frenzy_social/models/user_model.dart';
 import 'package:frenzy_social/widgets/following_users.dart';
+import 'package:frenzy_social/widgets/posts_carousel.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -58,7 +59,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       ),
       body: ListView(
         children: <Widget>[
-          FollowingUsers()
+          FollowingUsers(),
+          PostsCarousel(
+            pageController: _pageController,
+            title: 'Posts',
+            posts: posts,
+          )
         ],
       ),
     );
