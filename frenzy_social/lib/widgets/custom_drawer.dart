@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frenzy_social/data/data.dart';
 import 'package:frenzy_social/screens/home_screen.dart';
 import 'package:frenzy_social/screens/login_screen.dart';
+import 'package:frenzy_social/screens/profile_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
 
@@ -74,9 +75,9 @@ class CustomDrawer extends StatelessWidget {
           ),
           _buildDrawerOption(Icon(Icons.chat), 'Chat', ()=>{}),
           _buildDrawerOption(Icon(Icons.location_on), 'Map', ()=>{}),
-          _buildDrawerOption(Icon(Icons.account_circle), 'Your Profile', ()=>{}),
+          _buildDrawerOption(Icon(Icons.account_circle), 'Your Profile', ()=>
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ProfileScreen()))),
           _buildDrawerOption(Icon(Icons.settings), 'Settings', ()=>{}),
-
           Expanded(
             child: Align(
               alignment: FractionalOffset.bottomCenter,
@@ -85,7 +86,6 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           )
-
         ],
       ),
     );
