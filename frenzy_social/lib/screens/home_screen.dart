@@ -79,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     height: 60.0,
                     width: 60.0,
                     decoration: BoxDecoration(
+//                      shape: BoxShape.circle,
                       borderRadius: BorderRadius.circular(30.0),
                       border: Border.all(color: Theme.of(context).primaryColor, width: 3.0, style: BorderStyle.solid),
                       boxShadow: [
