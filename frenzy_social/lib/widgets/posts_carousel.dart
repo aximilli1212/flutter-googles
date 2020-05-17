@@ -61,6 +61,21 @@ class PostsCarousel extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+        ),
+        Positioned(
+
+          child: Container(
+            padding: EdgeInsets.all(12.0),
+            height: 120.0,
+            decoration: BoxDecoration(
+              color: Colors.white54,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(15.0),
+                  bottomRight: Radius.circular(15.0),
+              ),
+
+            ),
+          ),
         )
       ],
     );
