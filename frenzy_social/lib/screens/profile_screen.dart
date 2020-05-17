@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frenzy_social/models/user_model.dart';
 import 'package:frenzy_social/widgets/custom_drawer.dart';
+import 'package:frenzy_social/widgets/profile_clipper.dart';
 
 
 class ProfileScreen extends StatefulWidget {
@@ -49,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 Positioned(
-                  bottom: 0.0,
+                  bottom: 10.0,
                   child: Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -71,6 +72,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 )
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                widget.user.name,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ),
+              ),
             )
           ],
         ),
