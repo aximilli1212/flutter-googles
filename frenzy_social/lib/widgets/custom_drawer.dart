@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:frenzy_social/data/data.dart';
 
 class CustomDrawer extends StatelessWidget {
+
+  _buildDrawerOption(Icon icon, String title, Function onTap){
+    return ListTile(
+      leading: icon,
+      title: Text(title, style: TextStyle(
+        fontSize: 20.0
+      ),),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -18,8 +29,10 @@ class CustomDrawer extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Positioned(
-                bottom:30.0,
+                bottom:20.0,
+                left: 20.0,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     Container(
                       width: 100,
@@ -36,7 +49,18 @@ class CustomDrawer extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
+                    ),
+                    SizedBox(width: 6.0),
+                    Text(
+                      currentUser.name,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
                     )
+
                   ],
                 ),
               )
