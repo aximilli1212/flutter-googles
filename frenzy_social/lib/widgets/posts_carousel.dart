@@ -23,6 +23,14 @@ class PostsCarousel extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+          height: 400.0,
+          child: PageView.builder(
+              itemCount: posts.length,
+              itemBuilder: (BuildContext context, int index){
+                _buildPosts(context , index);
+              }),
+        )
       ],
     );
   }
