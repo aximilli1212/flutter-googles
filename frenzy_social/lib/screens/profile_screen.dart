@@ -83,6 +83,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   letterSpacing: 1.5,
                 ),
               ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 50.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Text('Following', style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 22.0,
+                      ),),
+                      SizedBox(height: 4.0,),
+                      Text(widget.user.following.toString(), style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text('Following', style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 22.0,
+                      ),),
+                      SizedBox(height: 4.0,),
+                      Text(widget.user.following.toString(), style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
