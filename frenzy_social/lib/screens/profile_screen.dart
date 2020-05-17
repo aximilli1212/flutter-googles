@@ -57,6 +57,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         )
                       ]
                     ),
+                    child: ClipOval(
+                      child: Image(image: AssetImage(widget.user.profileImageUrl),
+                        fit: BoxFit.cover,
+                        height: 120.0,
+                        width: 120.0,
+                      ),
+                    ),
                   ),
                 )
               ],
