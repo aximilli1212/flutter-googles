@@ -28,12 +28,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: <Widget>[
             Stack(
+              alignment: Alignment.center,
               children: <Widget>[
-                Image(height: 300.0,
-                    width: double.infinity,
-                    image: AssetImage(widget.user.backgroundImageUrl),
-                  fit: BoxFit.cover,
-                  ),
+                ClipPath(
+                  clipper: ProfileClipper(),
+                  child: Image(height: 300.0,
+                      width: double.infinity,
+                      image: AssetImage(widget.user.backgroundImageUrl),
+                    fit: BoxFit.cover,
+                    ),
+                ),
                 Positioned(
                   top: 50.0,
                   left: 20.0,
