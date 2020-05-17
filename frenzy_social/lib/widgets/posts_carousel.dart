@@ -63,9 +63,9 @@ class PostsCarousel extends StatelessWidget {
           ),
         ),
         Positioned(
-           left: 0.0,
-           bottom: 0.0,
-           right: 0.0,
+           left: 10.0,
+           bottom: 10.0,
+           right: 10.0,
           child: Container(
             padding: EdgeInsets.all(12.0),
             height: 120.0,
@@ -78,10 +78,13 @@ class PostsCarousel extends StatelessWidget {
 
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(post.title),
                 Text(post.location),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Row(
                       children: <Widget>[
