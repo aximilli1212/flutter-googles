@@ -11,6 +11,19 @@ class PostsCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+          child: Text(title,
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
