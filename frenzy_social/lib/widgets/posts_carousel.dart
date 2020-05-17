@@ -81,15 +81,18 @@ class PostsCarousel extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(post.title),
-                Text(post.location),
+                Text(post.title,overflow: TextOverflow.ellipsis, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
+                Text(post.location,overflow: TextOverflow.ellipsis, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18)),
+                SizedBox(height: 6.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Row(
                       children: <Widget>[
                         Icon(Icons.favorite, color: Colors.red),
-                        Text(post.likes.toString()),
+                        SizedBox(width: 4.0,),
+                        Text(post.likes.toString(),
+                          style: TextStyle(fontSize: 18.0)),
                       ],
 
                     ),
@@ -97,7 +100,9 @@ class PostsCarousel extends StatelessWidget {
                       children: <Widget>[
                         Icon(Icons.comment,
                         color: Theme.of(context).primaryColor,),
-                        Text(post.comments.toString()),
+                        SizedBox(width: 4.0,),
+                        Text(post.comments.toString(),
+                        style: TextStyle(fontSize: 18.0),),
                       ],
                     )
                   ],
