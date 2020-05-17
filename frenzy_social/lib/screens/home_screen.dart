@@ -57,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           ],
         ),
       ),
+      drawer: CustomDrawer(),
       body: ListView(
         children: <Widget>[
           FollowingUsers(),
