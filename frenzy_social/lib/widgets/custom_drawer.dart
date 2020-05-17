@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frenzy_social/data/data.dart';
+import 'package:frenzy_social/screens/home_screen.dart';
+import 'package:frenzy_social/screens/login_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
 
@@ -9,6 +11,7 @@ class CustomDrawer extends StatelessWidget {
       title: Text(title, style: TextStyle(
         fontSize: 20.0
       ),),
+      onTap: onTap,
     );
   }
 
@@ -65,7 +68,24 @@ class CustomDrawer extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          _buildDrawerOption(Icon(Icons.dashboard), 'Dashboard', ()=>
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> HomeScreen()))
+          ),
+          _buildDrawerOption(Icon(Icons.chat), 'Chat', ()=>{}),
+          _buildDrawerOption(Icon(Icons.location_on), 'Map', ()=>{}),
+          _buildDrawerOption(Icon(Icons.account_circle), 'Your Profile', ()=>{}),
+          _buildDrawerOption(Icon(Icons.settings), 'Settings', ()=>{}),
+
+          Expanded(
+            child: Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: _buildDrawerOption(Icon(Icons.directions_run), 'Logout', ()=>
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> LoginScreen()))
+              ),
+            ),
           )
+
         ],
       ),
     );
