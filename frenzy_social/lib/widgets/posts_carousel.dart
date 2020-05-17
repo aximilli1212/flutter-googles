@@ -47,8 +47,11 @@ class PostsCarousel extends StatelessWidget {
           value = (1 - (value.abs() * 0.25)).clamp(0.0, 1.0);
         }
         return Center(
-          child: SizedBox(),
-        )
+          child: SizedBox(
+            height: Curves.easeInOut.transform(value) * 400.0,
+            child: widget,
+          ),
+        );
         },
       child: Stack(
         children: <Widget>[
