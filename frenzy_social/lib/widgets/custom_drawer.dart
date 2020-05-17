@@ -76,7 +76,7 @@ class CustomDrawer extends StatelessWidget {
           _buildDrawerOption(Icon(Icons.chat), 'Chat', ()=>{}),
           _buildDrawerOption(Icon(Icons.location_on), 'Map', ()=>{}),
           _buildDrawerOption(Icon(Icons.account_circle), 'Your Profile', ()=>
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ProfileScreen()))),
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ProfileScreen(user: currentUser,)))),
           _buildDrawerOption(Icon(Icons.settings), 'Settings', ()=>{}),
           Expanded(
             child: Align(
