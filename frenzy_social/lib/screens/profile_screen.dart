@@ -17,6 +17,17 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  PageController _yourPostsPageController;
+  PageController _favoritesPageController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _yourPostsPageController = PageController(initialPage: 0, viewportFraction: 0.8);
+    _favoritesPageController = PageController(initialPage: 0, viewportFraction: 0.8);
+
+  }
 
 
 
@@ -85,9 +96,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 50.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
                     children: <Widget>[
@@ -105,7 +115,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Column(
                     children: <Widget>[
-                      Text('Following', style: TextStyle(
+                      Text('Followers', style: TextStyle(
                         color: Colors.black54,
                         fontSize: 22.0,
                       ),),
