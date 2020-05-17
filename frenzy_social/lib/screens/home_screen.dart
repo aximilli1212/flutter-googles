@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frenzy_social/data/data.dart';
 import 'package:frenzy_social/models/user_model.dart';
+import 'package:frenzy_social/widgets/custom_drawer.dart';
 import 'package:frenzy_social/widgets/following_users.dart';
 import 'package:frenzy_social/widgets/posts_carousel.dart';
 
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           ],
         ),
       ),
+      drawer: CustomDrawer(),
       body: ListView(
         children: <Widget>[
           FollowingUsers(),
