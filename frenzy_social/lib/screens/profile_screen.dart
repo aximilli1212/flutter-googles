@@ -43,6 +43,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     color: Theme.of(context).primaryColor,
                     onPressed: ()=> _scaffoldKey.currentState.openDrawer(),
                   ),
+                ),
+                Positioned(
+                  bottom: 0.0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(0,2),
+                          blurRadius: 6.0,
+                        )
+                      ]
+                    ),
+                  ),
                 )
               ],
             )
